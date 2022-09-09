@@ -2,8 +2,10 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Frame extends JFrame {
+public class Frame extends JFrame implements KeyListener {
 
     public Frame(){
         this.setSize(1080,600);
@@ -16,5 +18,24 @@ public class Frame extends JFrame {
 
         ImageIcon imageIcon = new ImageIcon("TATE.webp");
         this.setIconImage(imageIcon.getImage());
+
+        CommandTextfield commandTextfield = new CommandTextfield();
+        commandTextfield.addKeyListener(this);
+        this.add(commandTextfield);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }
