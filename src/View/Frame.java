@@ -13,5 +13,8 @@ public class Frame extends JFrame {
         this.setLayout(null);
         this.setVisible(true);
         this.getContentPane().setBackground(new Color(89,47,34));
+
+        ImageIcon imageIcon = new ImageIcon("TATE.webp");
+        this.setIconImage(imageIcon.getImage());
     }
 }
