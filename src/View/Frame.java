@@ -7,7 +7,12 @@ import java.awt.event.KeyListener;
 
 public class Frame extends JFrame implements KeyListener {
 
+    private int width;
+    private int height;
+
     public Frame(){
+        width = 1080;
+        height = 600;
         this.setSize(1080,600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -16,11 +21,7 @@ public class Frame extends JFrame implements KeyListener {
         this.setVisible(true);
         this.getContentPane().setBackground(new Color(89,47,34));
 
-        ImageIcon imageIcon = new ImageIcon("TATE.webp");
-        this.setIconImage(imageIcon.getImage());
-
         CommandTextfield commandTextfield = new CommandTextfield();
-        commandTextfield.addKeyListener(this);
         this.add(commandTextfield);
     }
 

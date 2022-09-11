@@ -1,4 +1,6 @@
 package View;
 
-public class OutputLabel {
+import javax.swing.*;
+
+public class OutputLabel extends JLabel {
 }

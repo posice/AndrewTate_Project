@@ -25,7 +25,9 @@ public class CommandTextfield extends JTextField implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if (e.getKeyCode() == KeyEvent.VK_ENTER){
+            this.setText("");
+        }
     }
 
     @Override
