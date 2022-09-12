@@ -9,6 +9,7 @@ public class Frame extends JFrame implements KeyListener {
 
     private int width;
     private int height;
+    private CommandTextfield commandTextfield;
 
     public Frame(){
         width = 1080;
@@ -21,7 +22,8 @@ public class Frame extends JFrame implements KeyListener {
         this.setVisible(true);
         this.getContentPane().setBackground(new Color(89,47,34));
 
-        CommandTextfield commandTextfield = new CommandTextfield();
+        commandTextfield = new CommandTextfield();
+        commandTextfield.addKeyListener(this);
         this.add(commandTextfield);
     }
 
@@ -32,7 +34,11 @@ public class Frame extends JFrame implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if (e.getKeyCode() == KeyEvent.VK_ENTER){
+            System.out.println(commandTextfield.getText());
+            System.out.println("hu");
+            commandTextfield.setText("");
+        }
     }
 
     @Override
