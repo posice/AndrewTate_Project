@@ -1,9 +1,7 @@
-package View;
+package view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class Frame extends JFrame{
 

@@ -1,8 +1,7 @@
-package Model.tf;
+package model.tf;
 
 import org.tensorflow.*;
 
-import java.nio.file.Paths;
 import java.util.List;
 
 public class PredictCmd {

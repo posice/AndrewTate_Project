@@ -1,5 +1,5 @@
-import Model.tf.PredictCmd;
-import View.Frame;
+import model.tf.PredictCmd;
+import view.Frame;
 
 public class Main {
     public static void main(String[] args) {
