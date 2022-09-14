@@ -24,7 +24,7 @@
     </plugins>
   </build>
   <properties>
-    <exec.mainClass>Test</exec.mainClass>
+    <exec.mainClass>Main</exec.mainClass>
     <!-- The sample code requires at least JDK 1.7. -->
     <!-- The maven compiler plugin defaults to a lower versiony -->
     <maven.compiler.source>1.7</maven.compiler.source>
