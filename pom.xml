@@ -23,4 +23,18 @@
       </plugin>
     </plugins>
   </build>
+  <properties>
+    <exec.mainClass>Test</exec.mainClass>
+    <!-- The sample code requires at least JDK 1.7. -->
+    <!-- The maven compiler plugin defaults to a lower versiony -->
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+   </properties>
+   <dependencies>
+     <dependency>
+       <groupId>org.tensorflow</groupId>
+       <artifactId>tensorflow</artifactId>
+       <version>1.3.0-rc1</version>
+      </dependency>
+   </dependencies>
 </project>
