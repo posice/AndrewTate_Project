@@ -1,0 +1,12 @@
+{"intents":
+  [
+    {
+      "tag" : "test",
+      "input" : ["hey", "test"],
+      "responses": [
+        "resp1",
+        "resp2"
+      ]
+    }
+  ]
+}
