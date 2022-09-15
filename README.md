@@ -1,4 +1,4 @@
-# AndrewTate_Project [![version](https://img.shields.io/badge/version-0.6.9-green.svg)](https://semver.org)
+# AndrewTate_Project [![version](https://img.shields.io/badge/version-0.6.9-red.svg)](https://semver.org)
 A simple game using GUI and Tensorflow for Java
 
 ## Table of Contents
