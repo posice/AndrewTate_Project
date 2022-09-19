@@ -9,10 +9,6 @@ public class Person {
     protected int age;
 
     public Person(String name, double money, Room location, int bodyCount, int age) {
-        this.name = name;
-        this.money = money;
-        this.location = location;
-        this.bodyCount = bodyCount;
-        this.age = age;
+
     }
 }

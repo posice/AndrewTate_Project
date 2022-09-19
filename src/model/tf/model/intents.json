@@ -1,12 +1,34 @@
 {"intents":
   [
     {
-      "tag" : "test",
-      "input" : ["hey", "test"],
-      "responses": [
-        "resp1",
-        "resp2"
-      ]
+      "tag" : "go_gym",
+      "input" : ["go to gym", "we go gym", "we go jim"],
+      "responses": [ "GT gym" ]
+    },
+    {
+      "tag" : "go_mansion",
+      "input" : ["go to mansion", "we go mansion"],
+      "responses": [ "GT mansion" ]
+    },
+    {
+      "tag" : "go_frenchbrothel",
+      "input" : ["go to frenchbrothel", "we go frenchbrothel"],
+      "responses": [ "GT frenchbrothel" ]
+    },
+    {
+      "tag" : "go_garage",
+      "input" : ["go to garage", "we go garage"],
+      "responses": [ "GT garage" ]
+    },
+    {
+      "tag" : "go_mansion",
+      "input" : ["go to mansion", "we go mansion"],
+      "responses": [ "GT mansion" ]
+    },
+    {
+      "tag" : "go_mansion",
+      "input" : ["go to mansion", "we go mansion"],
+      "responses": [ "GT mansion" ]
     }
   ]
 }
