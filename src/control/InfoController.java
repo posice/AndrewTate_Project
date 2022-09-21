@@ -28,7 +28,7 @@ public class InfoController {
         timer.schedule(timerTask, 0, 5000);
     }
     public String getInfos(){
-        String infos = "" + tate.getBodyCount() + tate.getAge() + tate.getMoney();
+        String infos = "follower: " + tate.getFollower() + "money: " + tate.getMoney();
         return infos;
     }
 }

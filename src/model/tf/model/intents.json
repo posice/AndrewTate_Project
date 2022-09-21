@@ -21,9 +21,29 @@
       "responses": [ "GT garage" ]
     },
     {
-      "tag" : "go_carShop",
-      "input" : ["go to carShop", "we go carShop"],
+      "tag" : "go_carshop",
+      "input" : ["go to carshop", "we go carshop"],
       "responses": [ "GT carShop" ]
+    },
+    {
+      "tag" : "talk_chick",
+      "input" : ["talk to chick", "hello chick"],
+      "responses": [ "talks to chick" ]
+    },
+    {
+      "tag" : "talk ninefive",
+      "input" : ["talk to chick", "hello chick"],
+      "responses": [ "talks to ninefive" ]
+    },
+    {
+      "tag" : "talk topg",
+      "input" : ["talk to topg", "hello topg"],
+      "responses": [ "talks to topg" ]
+    },
+    {
+      "tag" : "go_to_kitchen",
+      "input" : ["go to the kitchen", "fuck off chick"],
+      "responses": [ "No, I wont!", "No, fuck off!" ]
     }
   ]
 }
