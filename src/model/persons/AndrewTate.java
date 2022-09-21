@@ -27,6 +27,7 @@ public class AndrewTate extends Tate {
     public void payDay() {
         money += follower * 10;
         money += (int)(Math.random()*1000);
+        money += addUpCarMoney();
     }
 
     @Override

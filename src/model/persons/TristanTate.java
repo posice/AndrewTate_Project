@@ -2,6 +2,7 @@ package model.persons;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import model.Room;
 
 public class TristanTate extends Tate {
 
@@ -36,5 +37,8 @@ public class TristanTate extends Tate {
     public void payTaxes() { money *= 0.95; }
 
     @Override
-    public void payDay() { money += (int)(Math.random()*1000); }
+    public void payDay() {
+        money += (int)(Math.random()*1000); //Geld was durch Arbeit verdient wird
+        money += addUpCarMoney();
+    }
 }
