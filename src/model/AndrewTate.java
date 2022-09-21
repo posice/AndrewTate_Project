@@ -13,4 +13,12 @@ public class AndrewTate {
 
     public double getMoney(){ return money; }
     public int getFollower() { return follower;}
+
+    public void setMoney(double money) { this.money = money; }
+    public void setFollower(int follower) { this.follower = follower;}
+    public void setCars(Car[] cars) { this.cars = cars; }
+
+    public void payDay() {
+        money += follower * 10;
+    }
 }

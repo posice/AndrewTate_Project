@@ -7,11 +7,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class InfoController {
-    private AndrewTate tate;
+    private AndrewTate andrewTate;
     private InfoLabel label;
 
     public InfoController(AndrewTate tate){
-        this.tate = tate;
+        this.andrewTate = tate;
         doInfos();
     }
 
@@ -21,14 +21,16 @@ public class InfoController {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
+                andrewTate.payDay();
                 label.refresh(getInfos());
             }
         };
 
         timer.schedule(timerTask, 0, 5000);
     } // Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
+
     public String getInfos(){
-        String infos = "follower: " + tate.getFollower() + "money: " + tate.getMoney();
+        String infos = "follower: " + andrewTate.getFollower() + "money: " + andrewTate.getMoney();
         return infos;
     }
 }
