@@ -11,21 +11,17 @@ public class Frame extends JFrame{
     private OutputLabel outputLabel;
 
     public Frame(){
-        width = 1080;
-        height = 600;
+        OutputLabel label = new OutputLabel();
         this.setSize(1080,600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setTitle("TopGs get rich");
         this.setLayout(null);
-        this.setVisible(true);
         this.getContentPane().setBackground(new Color(89,47,34));
 
         commandTextfield = new CommandTextfield();
-
-        OutputPanel panel = new OutputPanel();
-
-        this.add(panel);
+        this.setVisible(true);
+        this.add(label);
         this.add(commandTextfield);
     }
 

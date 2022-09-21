@@ -1,18 +1,14 @@
 package control;
 
-import model.tf.PredictCmd;
-import view.Frame;
+import model.AndrewTate;
+import model.Room;
 
 public class MainController {
-    public CommandController cc = new CommandController();
+    private AndrewTate tate;
+    private InfoController infoController;
 
-    public void control(){
-        Frame frame = new Frame();
-        PredictCmd cm = new PredictCmd();
-        cm.doSth();
-    }
-
-    public void passCmd(String cmd){
-        cc.newCommand(cmd);
+    public MainController(){
+        tate = new AndrewTate("Andrew Tate", 6000000, new Room(), 300, 30);
+        infoController = new InfoController(tate);
     }
 }

@@ -9,4 +9,8 @@ public class CommandController {
         newCmd = true;
     }
 
+    public void getCommand(String command){
+        String newCommand = command;
+    }
+
 }

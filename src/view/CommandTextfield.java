@@ -1,5 +1,7 @@
 package view;
 
+import control.CommandController;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -10,7 +12,10 @@ public class CommandTextfield extends JTextField implements KeyListener {
 
     private boolean commandTyped;
 
+    private CommandController commandController;
+
     public CommandTextfield(){
+        commandController = new CommandController();
         Border border = BorderFactory.createLineBorder(Color.white);
         this.setHorizontalAlignment(JTextField.LEFT);
         this.setForeground(Color.WHITE);
@@ -36,11 +41,8 @@ public class CommandTextfield extends JTextField implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER){
-            commandTyped = true;
-            String message = this.getCommand();
-            System.out.println(message); //SEX
-
-            commandTyped = false;
+            commandController.getCommand(this.getCommand());
+            System.out.println(this.getCommand());
         }
     }
 
