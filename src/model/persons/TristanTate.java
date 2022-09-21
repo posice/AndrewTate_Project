@@ -1,4 +1,5 @@
-package model;
+package model.persons;
+
 import java.util.Timer;
 import java.util.TimerTask;
 

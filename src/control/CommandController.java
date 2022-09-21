@@ -12,5 +12,4 @@ public class CommandController {
     public void getCommand(String command){
         String newCommand = command;
     }
-
 }

@@ -7,12 +7,15 @@ public class RoomController {
     private Room frenchBrothel;
     private Room gym;
     private Room garage;
+    private Room currentRoom;
 
     public RoomController() {
-        mansion = new Room("mansion", "In the mansion there is Tristan waiting for you");
-        frenchBrothel = new Room("frenchBrothel", "Ooooo, a very weird place, a lot of chicks and strange French" +
-                                    "men who are jerking off");
-        gym = new Room("gym", "It's time to train, a lot of TopGs in here");
-        garage = new Room("garage", "The cars" );
+        mansion = new Room("mansion", "");
+        currentRoom = mansion;
+        frenchBrothel = new Room("frenchBrothel", "");
+        gym = new Room("gym", "");
+        garage = new Room("garage", "" );
     }
+
+    public Room getCurrentRoom() { return currentRoom; }
 }

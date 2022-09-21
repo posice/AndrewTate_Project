@@ -1,4 +1,6 @@
-package model;
+package model.persons;
+
+import model.Car;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,7 +24,10 @@ public class AndrewTate extends Tate {
     public void setCars(Car[] cars) { this.cars = cars; }
 
     @Override
-    public void payDay() { money += follower * 10;}
+    public void payDay() {
+        money += follower * 10;
+        money += (int)(Math.random()*1000);
+    }
 
     @Override
     public void payTaxes() { money *= 0.9; }

@@ -1,16 +1,17 @@
 package control;
 
-import model.AndrewTate;
-import model.TristanTate;
+import model.persons.AndrewTate;
+import model.persons.TristanTate;
 import model.tf.PredictCmd;
 import view.Frame;
 
 public class MainController {
     CommandController commandController = new CommandController();
     RoomController roomController = new RoomController();
+    OutputController outputController = new OutputController(roomController);
     AndrewTate andrewTate = new AndrewTate();
     TristanTate tristanTate = new TristanTate();
-    InfoController infoController = new InfoController(andrewTate, tristanTate);
+    InfoController infoController = new InfoController(andrewTate, tristanTate, roomController);
 
     public void control(){
         Frame frame = new Frame();

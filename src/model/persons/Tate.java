@@ -1,4 +1,7 @@
-package model;
+package model.persons;
+
+import model.Car;
+import model.Room;
 
 public abstract class Tate {
 
@@ -15,6 +18,6 @@ public abstract class Tate {
     public void setCars(Car[] cars) { this.cars = cars; }
 
     public abstract void payDay();
-    public abstract void manageMoney();
     public abstract void payTaxes();
+    public abstract void manageMoney();
 }
