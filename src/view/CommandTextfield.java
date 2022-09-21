@@ -38,7 +38,8 @@ public class CommandTextfield extends JTextField implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_ENTER){
             commandTyped = true;
             String message = this.getCommand();
-            System.out.println(message);
+            System.out.println(message); //SEX
+
             commandTyped = false;
         }
     }

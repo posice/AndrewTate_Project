@@ -11,7 +11,7 @@ public class Chick extends NPC{
 
     @Override
     public String generateSentence() {
-        String output;
+        String output = "ouput";
 
         return output;
     }

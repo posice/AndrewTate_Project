@@ -21,14 +21,9 @@
       "responses": [ "GT garage" ]
     },
     {
-      "tag" : "go_mansion",
-      "input" : ["go to mansion", "we go mansion"],
-      "responses": [ "GT mansion" ]
-    },
-    {
-      "tag" : "go_mansion",
-      "input" : ["go to mansion", "we go mansion"],
-      "responses": [ "GT mansion" ]
+      "tag" : "go_carShop",
+      "input" : ["go to carShop", "we go carShop"],
+      "responses": [ "GT carShop" ]
     }
   ]
 }

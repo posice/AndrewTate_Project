@@ -6,4 +6,12 @@ public class NineFive extends NPC {
         super(name,money,location,bodyCount,age);
     }
 
+    @Override
+    public String generateSentence() {
+        String output = "ouput";
+
+        return output;
+    }
+
+
 }

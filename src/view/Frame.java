@@ -28,4 +28,8 @@ public class Frame extends JFrame{
         this.add(panel);
         this.add(commandTextfield);
     }
+
+    public CommandTextfield getCommandTextfield(){
+        return commandTextfield;
+    }
 }
