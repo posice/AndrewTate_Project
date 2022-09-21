@@ -18,7 +18,7 @@ public class AndrewTate {
     public void setFollower(int follower) { this.follower = follower;}
     public void setCars(Car[] cars) { this.cars = cars; }
 
-    public void payDay() {
-        money += follower * 10;
-    }
+    public void payDay() {money += follower * 10;}
+
+    public void taxes(){money = money*0.1}
 }
