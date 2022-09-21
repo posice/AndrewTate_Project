@@ -1,6 +1,7 @@
 package control;
 
 import model.AndrewTate;
+import model.TristanTate;
 import view.InfoLabel;
 
 import java.util.Timer;
@@ -8,37 +9,29 @@ import java.util.TimerTask;
 
 public class InfoController {
     private AndrewTate andrewTate;
+    private TristanTate tristanTate;
     private InfoLabel label;
 
-    private int taxday = 1;
-
-    public InfoController(AndrewTate tate){
-        this.andrewTate = tate;
+    public InfoController(AndrewTate andrewTate, TristanTate tristanTate){
+        this.andrewTate = andrewTate;
+        this.tristanTate = tristanTate;
         doInfos();
     }
 
     public void doInfos(){
-
         Timer timer = new Timer();
-
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                if (taxday == 4){
-                    taxday = 1;
-                    andrewTate.taxes();
-                }
-                andrewTate.payDay();
                 label.refresh(getInfos());
-                taxday ++;
             }
         };
-
-        timer.schedule(timerTask, 0, 5000);
+        timer.schedule(timerTask, 100, 5000);
     } // Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 
     public String getInfos(){
-        String infos = "follower: " + andrewTate.getFollower() + "money: " + andrewTate.getMoney();
+        String infos = "Andrew Tate: follower: " + andrewTate.getFollower() + " money: " +
+                        andrewTate.getMoney() + "\n" + "Tristan Tate: follower: " ;
         return infos;
     }
 }

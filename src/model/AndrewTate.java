@@ -1,14 +1,17 @@
 package model;
 
-public class AndrewTate {
+import java.util.Timer;
+import java.util.TimerTask;
 
-    private double money;
+public class AndrewTate extends Tate {
+
     private int follower;
-    private Car[] cars;
+    private int taxday;
 
     public AndrewTate() {
-        money = 0;
         follower = 0;
+        taxday = 1;
+        manageMoney();
     }
 
     public double getMoney(){ return money; }
@@ -18,7 +21,28 @@ public class AndrewTate {
     public void setFollower(int follower) { this.follower = follower;}
     public void setCars(Car[] cars) { this.cars = cars; }
 
-    public void payDay() {
-        money += follower * 10;
+    @Override
+    public void payDay() { money += follower * 10;}
+
+    @Override
+    public void payTaxes() { money *= 0.9; }
+
+    @Override
+    public void manageMoney() {
+        Timer timer = new Timer();
+
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                if (taxday == 4){
+                    taxday = 1;
+                    payTaxes();
+                }
+                payDay();
+                taxday ++;
+            }
+        };
+
+        timer.schedule(timerTask, 0, 5000);
     }
 }

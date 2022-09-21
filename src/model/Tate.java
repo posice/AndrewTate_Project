@@ -13,4 +13,8 @@ public abstract class Tate {
 
     public void setMoney(double money) { this.money = money; }
     public void setCars(Car[] cars) { this.cars = cars; }
+
+    public abstract void payDay();
+    public abstract void manageMoney();
+    public abstract void payTaxes();
 }

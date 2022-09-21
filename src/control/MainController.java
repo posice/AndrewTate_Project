@@ -10,7 +10,7 @@ public class MainController {
     RoomController roomController = new RoomController();
     AndrewTate andrewTate = new AndrewTate();
     TristanTate tristanTate = new TristanTate();
-    InfoController infoController = new InfoController(andrewTate);
+    InfoController infoController = new InfoController(andrewTate, tristanTate);
 
     public void control(){
         Frame frame = new Frame();
