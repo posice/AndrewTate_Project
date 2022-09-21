@@ -1,6 +1,7 @@
 package control;
 
 import model.AndrewTate;
+import model.TristanTate;
 import model.tf.PredictCmd;
 import view.Frame;
 
@@ -8,6 +9,7 @@ public class MainController {
     CommandController commandController = new CommandController();
     RoomController roomController = new RoomController();
     AndrewTate andrewTate = new AndrewTate();
+    TristanTate tristanTate = new TristanTate();
     InfoController infoController = new InfoController(andrewTate);
 
     public void control(){
