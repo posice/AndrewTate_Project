@@ -10,19 +10,27 @@ public class InfoController {
     private AndrewTate andrewTate;
     private InfoLabel label;
 
+    private int taxday = 1;
+
     public InfoController(AndrewTate tate){
         this.andrewTate = tate;
         doInfos();
     }
 
     public void doInfos(){
+
         Timer timer = new Timer();
 
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
+                if (taxday == 4){
+                    taxday = 1;
+                    andrewTate.taxes();
+                }
                 andrewTate.payDay();
                 label.refresh(getInfos());
+                taxday ++;
             }
         };
 
