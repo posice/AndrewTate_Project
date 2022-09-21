@@ -26,7 +26,7 @@ public class InfoController {
         };
 
         timer.schedule(timerTask, 0, 5000);
-    }
+    } // Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
     public String getInfos(){
         String infos = "follower: " + tate.getFollower() + "money: " + tate.getMoney();
         return infos;
