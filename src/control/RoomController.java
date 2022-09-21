@@ -7,15 +7,21 @@ public class RoomController {
     private Room frenchBrothel;
     private Room gym;
     private Room garage;
-    private Room currentRoom;
+    private Room currentRoomAndrew;
+    private Room currentRoomTristan;
 
     public RoomController() {
         mansion = new Room("mansion", "");
-        currentRoom = mansion;
+        currentRoomAndrew = mansion;
+        currentRoomTristan = mansion;
         frenchBrothel = new Room("frenchBrothel", "");
         gym = new Room("gym", "");
         garage = new Room("garage", "" );
     }
 
-    public Room getCurrentRoom() { return currentRoom; }
+    public Room getCurrentRoomAndrew() { return currentRoomAndrew; }
+    public Room getCurrentRoomTristan() { return currentRoomTristan; }
+
+    public void setCurrentRoomTristan (Room newRoom) { currentRoomTristan = newRoom; }
+    public void setCurrentRoomAndrew(Room newRoom) { currentRoomAndrew = newRoom; }
 }

@@ -33,8 +33,9 @@ public class InfoController {
 
     public String getInfos() {
         String infos = "Andrew Tate: follower: " + andrewTate.getFollower() + " money: " +
-                andrewTate.getMoney() + "current location: " + roomController.getCurrentRoom().getName() +
-                "\n" + "Tristan Tate: money: " + tristanTate.getMoney();
+                andrewTate.getMoney() + "current location: " + roomController.getCurrentRoomAndrew().getName() +
+                "\n" + "Tristan Tate: money: " + tristanTate.getMoney() + "location: " +
+                roomController.getCurrentRoomTristan().getName();
         return infos;
     }
 }
