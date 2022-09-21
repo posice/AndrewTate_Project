@@ -4,7 +4,8 @@ import model.tf.PredictCmd;
 import view.Frame;
 
 public class MainController {
-    public CommandController cc = new CommandController();
+    CommandController commandController = new CommandController();
+    RoomController roomController = new RoomController();
 
     public void control(){
         Frame frame = new Frame();
@@ -13,6 +14,6 @@ public class MainController {
     }
 
     public void passCmd(String cmd){
-        cc.newCommand(cmd);
+        commandController.newCommand(cmd);
     }
 }
