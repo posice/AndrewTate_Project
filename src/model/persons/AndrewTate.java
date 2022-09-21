@@ -30,7 +30,7 @@ public class AndrewTate extends Tate {
     }
 
     @Override
-    public void payTaxes() { money *= 0.9; }
+    public void payTaxes() { money*= 0.9; }
 
     @Override
     public void manageMoney() {
