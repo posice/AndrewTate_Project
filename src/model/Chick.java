@@ -8,11 +8,4 @@ public class Chick extends NPC{
         super(name,money,location,bodyCount,age);
         this.smashOrPass = smashOrPass;
     }
-
-    @Override
-    public String generateSentence() {
-        String output = "ouput";
-
-        return output;
-    }
 }

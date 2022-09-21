@@ -6,7 +6,5 @@ public abstract class NPC extends Person {
         super(name,money,location,bodyCount,age);
     }
 
-    abstract String generateSentence();
-
 
 }
