@@ -10,8 +10,6 @@ import java.awt.event.KeyListener;
 
 public class CommandTextfield extends JTextField implements KeyListener {
 
-    private boolean commandTyped;
-
     private CommandController commandController;
 
     public CommandTextfield(){
