@@ -17,6 +17,7 @@ public class InfoController {
         this.andrewTate = andrewTate;
         this.tristanTate = tristanTate;
         this.roomController = roomController;
+        label = new InfoLabel();
         doInfos();
     }
 
