@@ -47,7 +47,7 @@ public class AndrewTate extends Tate {
                 payDay();
                 taxday ++;
             }
-        };
+        };// Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 
         timer.schedule(timerTask, 0, 5000);
     }

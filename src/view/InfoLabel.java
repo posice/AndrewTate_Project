@@ -5,7 +5,6 @@ import javax.swing.*;
 public class InfoLabel extends JLabel {
 
     public InfoLabel(){
-
     }
 
     public void refresh(String text){
