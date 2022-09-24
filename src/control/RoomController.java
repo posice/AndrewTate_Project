@@ -1,5 +1,6 @@
 package control;
 import model.Room;
+import model.persons.*;
 
 public class RoomController {
 
@@ -14,8 +15,12 @@ public class RoomController {
     private Room opelStore;
     private Room currentRoomAndrew;
     private Room currentRoomTristan;
+    private AndrewTate andrewTate; //lose Kopplung durch getter -> OuputController muss AndrewTate und TristanTate nicht kennen
+    private TristanTate tristanTate;
 
-    public RoomController() {
+    public RoomController(AndrewTate andrewTate, TristanTate tristanTate) {
+        this.andrewTate = andrewTate;
+        this.tristanTate = tristanTate;
         mansion = new Room("mansion", "", new String[]{"chick", "Tristan"});
         currentRoomAndrew = mansion;
         currentRoomTristan = mansion;
@@ -31,48 +36,78 @@ public class RoomController {
 
     public Room getCurrentRoomAndrew() { return currentRoomAndrew; }
     public Room getCurrentRoomTristan() { return currentRoomTristan; }
+    public AndrewTate getAndrewTate() { return andrewTate; }
+    public TristanTate getTristanTate() { return tristanTate; }
 
     //public void setCurrentRoomTristan (Room newRoom) { currentRoomTristan = newRoom; }
     public void setCurrentRoomAndrew(Room newRoom) { currentRoomAndrew = newRoom; }
 
-    public void setRandomCurrentRoomTristan() {
+    public void setRandomRoom(Tate tate) { //Subtyping Methode
         int randomN = (int)(Math.random()*100);
         if (randomN < 40) {
-            currentRoomTristan.setTristanOutRoom();
-            mansion.setTristanInRoom();
-            currentRoomTristan = mansion;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                mansion.setTristanInRoom();
+                currentRoomTristan = mansion;
+            } else {
+                currentRoomAndrew = mansion;
+            }
+
         } else if (randomN < 44) {
-            currentRoomTristan.setTristanOutRoom();
-            frenchBrothel.setTristanInRoom();
-            currentRoomTristan = frenchBrothel;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                frenchBrothel.setTristanInRoom();
+                currentRoomTristan = frenchBrothel;
+            } else { currentRoomAndrew = frenchBrothel; }
+
         } else if (randomN < 70) {
-            currentRoomTristan.setTristanOutRoom();
-            gym.setTristanInRoom();
-            currentRoomTristan = gym;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                gym.setTristanInRoom();
+                currentRoomTristan = gym;
+            } else { currentRoomAndrew = gym; }
+
         } else if (randomN < 80) {
-            currentRoomTristan.setTristanOutRoom();
-            garage.setTristanInRoom();
-            currentRoomTristan = garage;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                garage.setTristanInRoom();
+                currentRoomTristan = garage;
+            } else { currentRoomAndrew = garage; }
+
         } else if (randomN < 85) {
-            currentRoomTristan.setTristanOutRoom();
-            bugattiStore.setTristanInRoom();
-            currentRoomTristan = bugattiStore;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                bugattiStore.setTristanInRoom();
+                currentRoomTristan = bugattiStore;
+            } else { currentRoomAndrew = bugattiStore; }
+
         } else if (randomN < 89) {
-            currentRoomTristan.setTristanOutRoom();
-            lamboStore.setTristanInRoom();
-            currentRoomTristan = lamboStore;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                lamboStore.setTristanInRoom();
+                currentRoomTristan = lamboStore;
+            } else { currentRoomAndrew = lamboStore; }
+
         } else if (randomN < 93) {
-            currentRoomTristan.setTristanOutRoom();
-            astonMartinStore.setTristanInRoom();
-            currentRoomTristan = astonMartinStore;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                astonMartinStore.setTristanInRoom();
+                currentRoomTristan = astonMartinStore;
+            } else { currentRoomAndrew = astonMartinStore; }
+
         } else if (randomN < 97) {
-            currentRoomTristan.setTristanOutRoom();
-            ferrariStore.setTristanInRoom();
-            currentRoomTristan = ferrariStore;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                ferrariStore.setTristanInRoom();
+                currentRoomTristan = ferrariStore;
+            } else { currentRoomAndrew = ferrariStore; }
+
         } else if (randomN < 98) {
-            currentRoomTristan.setTristanOutRoom();
-            opelStore.setTristanInRoom();
-            currentRoomTristan = opelStore;
+            if (tate == tristanTate) {
+                currentRoomTristan.setTristanOutRoom();
+                opelStore.setTristanInRoom();
+                currentRoomTristan = opelStore;
+            } else { currentRoomAndrew = opelStore; }
         }
     }
 }

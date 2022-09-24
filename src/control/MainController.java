@@ -7,15 +7,15 @@ import view.Frame;
 
 public class MainController {
     CommandController commandController = new CommandController();
-    RoomController roomController = new RoomController();
-    OutputController outputController = new OutputController(roomController);
     AndrewTate andrewTate = new AndrewTate();
     TristanTate tristanTate = new TristanTate();
+    RoomController roomController = new RoomController(andrewTate, tristanTate);
+    OutputController outputController = new OutputController(roomController);
 
     public void control(){
         Frame frame = new Frame();
         PredictCmd cm = new PredictCmd();
-        cm.doSth();
+        //cm.doSth();
     }
 
     public void passCmd(String cmd){
