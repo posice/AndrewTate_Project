@@ -26,7 +26,7 @@ public class Frame extends JFrame{
 
 
 
-    public void printOutput(Frame myFrame, String output) throws IOException {
+    public void printOutput(String output) throws IOException {
         for (int i = yPosOfPanel; i < outputPanels.length; i++){
             if (yPosOfPanel > 9){
                 yPosOfPanel = 1;
@@ -41,10 +41,10 @@ public class Frame extends JFrame{
                 outputPanels[9].setVisible(false);
             }
             outputPanels[i] = new OutputPanel(new OutputLabel("Folgende Infos: " + output), 10, 10 + 50 * yPosOfPanel);
-            myFrame.add(outputPanels[i]);
+            this.add(outputPanels[i]);
             yPosOfPanel++;
-            myFrame.setVisible(false);
-            myFrame.setVisible(true);
+            this.setVisible(false);
+            this.setVisible(true);
             break;
         }
     }
