@@ -8,7 +8,6 @@ public class OutputController {
     private CommandController commandController;
 
     public OutputController(RoomController roomController) {
-
         this.roomController = roomController;
     }
 

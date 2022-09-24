@@ -21,9 +21,29 @@
       "responses": [ "GT garage" ]
     },
     {
-      "tag" : "go_carshop",
-      "input" : ["go to carshop", "we go carshop"],
-      "responses": [ "GT carShop" ]
+      "tag" : "go_bugattistore",
+      "input" : ["go to bugattistore"],
+      "responses": [ "GT bugattistore" ]
+    },
+    {
+      "tag" : "go_lambostore",
+      "input" : ["go to lambostore"],
+      "responses": [ "GT lambostore" ]
+    },
+    {
+      "tag" : "go_astonmartinstore",
+      "input" : ["go to astonmartinstore"],
+      "responses": [ "GT astonmartinstore" ]
+    },
+    {
+      "tag" : "go_ferraristore",
+      "input" : ["go to ferraristore"],
+      "responses": [ "GT ferraristore" ]
+    },
+    {
+      "tag" : "go_opelstore",
+      "input" : ["go to opelstore"],
+      "responses": [ "GT opelstore" ]
     },
     {
       "tag" : "talk_chick",

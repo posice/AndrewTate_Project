@@ -38,6 +38,15 @@ public class RoomController {
     public Room getCurrentRoomTristan() { return currentRoomTristan; }
     public AndrewTate getAndrewTate() { return andrewTate; }
     public TristanTate getTristanTate() { return tristanTate; }
+    public Room getMansion() { return mansion; }
+    public Room getFrenchBrothel() { return frenchBrothel; }
+    public Room getGym() { return gym; }
+    public Room getGarage() { return garage; }
+    public Room getBugattiStore() { return bugattiStore; }
+    public Room getLamboStore() { return lamboStore; }
+    public Room getAstonMartinStore() { return astonMartinStore; }
+    public Room getFerrariStore() { return ferrariStore; }
+    public Room getOpelStore() { return opelStore; }
 
     //public void setCurrentRoomTristan (Room newRoom) { currentRoomTristan = newRoom; }
     public void setCurrentRoomAndrew(Room newRoom) { currentRoomAndrew = newRoom; }

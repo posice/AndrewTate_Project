@@ -1,5 +1,7 @@
 package view;
 
+import control.CommandController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
@@ -9,7 +11,7 @@ public class Frame extends JFrame{
     private OutputPanel[] outputPanels;
     private int yPosOfPanel;
 
-    public Frame(){
+    public Frame(CommandController commandController){
         yPosOfPanel = 1;
         this.setSize(1080,600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -19,7 +21,7 @@ public class Frame extends JFrame{
         this.getContentPane().setBackground(Color.black);
         this.getContentPane().setBackground(new Color(89,47,34));
         outputPanels = new OutputPanel[11];
-        commandTextfield = new CommandTextfield();
+        commandTextfield = new CommandTextfield(commandController);
         this.setVisible(true);
         this.add(commandTextfield);
     }

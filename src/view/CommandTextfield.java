@@ -12,8 +12,8 @@ public class CommandTextfield extends JTextField implements KeyListener {
 
     private CommandController commandController;
 
-    public CommandTextfield(){
-        commandController = new CommandController();
+    public CommandTextfield(CommandController commandController){
+        this.commandController = commandController;
         Border border = BorderFactory.createLineBorder(Color.white);
         this.setHorizontalAlignment(JTextField.LEFT);
         this.setForeground(Color.WHITE);
@@ -39,7 +39,7 @@ public class CommandTextfield extends JTextField implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER){
-            commandController.newCommand(this.getCommand());
+            commandController.controlCommand(this.getCommand());
             System.out.println(this.getCommand());
         }
     }
