@@ -11,7 +11,6 @@ public class MainController {
     OutputController outputController = new OutputController(roomController);
     AndrewTate andrewTate = new AndrewTate();
     TristanTate tristanTate = new TristanTate();
-    InfoController infoController = new InfoController(andrewTate, tristanTate, roomController);
 
     public void control(){
         Frame frame = new Frame();
