@@ -28,7 +28,7 @@ public class TristanTate extends Tate {
                 }
                 payDay();
             }
-        };
+        };// Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 
         timer.schedule(task, 0 ,20000);
     }
