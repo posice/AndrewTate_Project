@@ -10,6 +10,7 @@ public class Frame extends JFrame{
     private CommandTextfield commandTextfield;
     private OutputPanel[] outputPanels;
     private int yPosOfPanel;
+    private WinningFrame winningFrame;
 
     public Frame(CommandController commandController){
         yPosOfPanel = 1;
@@ -26,7 +27,10 @@ public class Frame extends JFrame{
         this.add(commandTextfield);
     }
 
-
+    public void win(){
+        this.setVisible(false);
+        winningFrame = new WinningFrame();
+    }
 
     public void printOutput(String output) throws IOException {
         for (int i = yPosOfPanel; i < outputPanels.length; i++){
