@@ -1,15 +1,20 @@
 package control;
 
+import model.tf.PredictCmd;
+import view.CommandTextfield;
+
 public class CommandController {
-    boolean newCmd = false;
-    String cmd = "";
+    String cmd;
+    int cmdId;
+    PredictCmd pcmd;
 
-    public void newCommand(String cmd){
-        this.cmd = cmd;
-        newCmd = true;
+    public CommandController(){
+        cmd = "";
+        pcmd = new PredictCmd();
     }
+    public void newCommand(String cmd){
+        this.cmdId = pcmd.predictAns(cmd);
 
-    public void getCommand(String command){
-        String newCommand = command;
+
     }
 }
