@@ -6,7 +6,7 @@ import view.CommandTextfield;
 public class CommandController {
     String cmd;
     int cmdId;
-    PredictCmd pcmd;
+    PredictCmd pcmd; //Hey
 
     public CommandController(){
         cmd = "";
