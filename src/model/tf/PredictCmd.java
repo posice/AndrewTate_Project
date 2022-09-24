@@ -1,16 +1,17 @@
 package model.tf;
 
 import org.tensorflow.*;
+import org.tensorflow.Tensor;
 
 import java.util.List;
 
 public class PredictCmd {
 
-    public void doSth() {
+    public int predictAns(String cmd) {
 
-        try (SavedModelBundle savedModelBundle = SavedModelBundle.load(System.getProperty("user.dir")+"\\src\\Model\\tf\\model", "serve")) {
+        try (SavedModelBundle model = SavedModelBundle.load(System.getProperty("user.dir")+"\\src\\Model\\tf\\model", "serve")) {
 
-            try (Session session = savedModelBundle.session()) {
+            /*try (Session session = savedModelBundle.session()) {
 
                 Session.Runner runner = session.runner();
                 runner.feed("x", Tensor.create(10));
@@ -18,11 +19,13 @@ public class PredictCmd {
 
                 List<Tensor> tensors = runner.fetch("ans").run();
                 System.out.println("Answer is: " + tensors.get(0).intValue());
-            }
+            }*/
+            return 1;
 
         } catch (TensorFlowException ex) {
             ex.printStackTrace();
         }
+        return -1;
     }
 
 }
