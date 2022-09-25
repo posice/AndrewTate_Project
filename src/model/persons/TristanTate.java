@@ -2,7 +2,6 @@ package model.persons;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import model.Room;
 
 public class TristanTate extends Tate {
 
@@ -10,11 +9,11 @@ public class TristanTate extends Tate {
 
     public TristanTate() {
         kids = 2;
-        manageMoney();
+        manageVariables();
     }
 
     @Override
-    public void manageMoney() {
+    public void manageVariables() {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
@@ -34,7 +33,7 @@ public class TristanTate extends Tate {
             }
         };// Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 
-        timer.schedule(task, 0 ,20000);
+        timer.schedule(task, 5000 ,20000);
     }
 
     @Override

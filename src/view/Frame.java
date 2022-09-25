@@ -58,7 +58,7 @@ public class Frame extends JFrame implements ActionListener {
             outputPanels[8].setVisible(false);
         }
         System.out.println(yPosOfPanel);
-        outputPanels[yPosOfPanel] = new OutputPanel(new OutputLabel("Folgende Infos: " + output), 10, 10 + 50 * yPosOfPanel);
+        outputPanels[yPosOfPanel] = new OutputPanel(new OutputLabel(output), 10, 10 + 50 * yPosOfPanel);
         //Am richtigen Ort wird das Label erstellt
         this.add(outputPanels[yPosOfPanel]);//Man fügt das Panel mit dem hinzugefügten Label hinzu
         yPosOfPanel++;//nächstes Mal eins weiter oben

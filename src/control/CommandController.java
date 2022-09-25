@@ -4,63 +4,172 @@ import model.tf.PredictCmd;
 import view.CommandTextfield;
 import model.persons.*;
 
+import java.io.IOException;
+
 public class CommandController {
     String cmd;
-    int cmdId;
-    PredictCmd pcmd; //Hey
     private String outputCommand;
     private OutputController outputController;
 
     public CommandController(){
         cmd = "";
         outputCommand = "";
-        pcmd = new PredictCmd();
     }
 
     public void newOutPutController(OutputController outputController) { this.outputController = outputController; }
 
-    public String getOutputCommand() { return outputCommand; }
-
-    public void controlCommand(String cmd) {
-        this.cmdId = pcmd.predictAns(cmd);
-        switch (cmdId) {
-            case 1:
+    public void controlCommand(String cmd) throws IOException {
+        switch (cmd) {
+            case "gym":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGym());
                 outputCommand = "goGym";
                 break;
-            case 2:
+            case "mansion":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getMansion());
                 outputCommand = "goMansion";
                 break;
-            case 3:
+            case "french brothel":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFrenchBrothel());
                 outputCommand = "goFrenchBrothel";
                 break;
-            case 4:
+            case "garage":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGarage());
                 outputCommand = "goGarage";
                 break;
-            case 5:
+            case "bugatti store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getBugattiStore());
                 outputCommand = "goBugattiStore";
                 break;
-            case 6:
+            case "lambo store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getLamboStore());
                 outputCommand = "goLamboStore";
                 break;
-            case 7:
+            case "aston martin store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getAstonMartinStore());
                 outputCommand = "goAstonMartinStore";
                 break;
-            case 8:
+            case "ferrari store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFerrariStore());
                 outputCommand = "goFerrariStore";
                 break;
-            case 9:
+            case "opel store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getOpelStore());
                 outputCommand = "goOpelStore";
                 break;
+            case "infos":
+                outputCommand = "getInfos";
+                break;
+            case "commands":
+                outputCommand = "getCommands";
+                break;
+            case "have fun":
+                for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
+                    if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
+                        outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
+                        outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "British chick"
+                    )
+                    {
+                        outputCommand = "haveFun";
+                        outputController.getRoomController().getAndrewTate().setFollower(
+                                outputController.getRoomController().getAndrewTate().getFollower() + 100
+                        );
+                        outputController.getRoomController().getAndrewTate().setMoney(
+                                outputController.getRoomController().getAndrewTate().getMoney() - 1000
+                        );
+                        break;
+                    } else { outputCommand = "noChick"; }
+                }
+                break;
+            case "hit nine five":
+                for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
+                    if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "NineFive") {
+                        outputCommand = "hitNineFive";
+                        outputController.getRoomController().getAndrewTate().setFollower(
+                                outputController.getRoomController().getAndrewTate().getFollower() + 1000
+                        );
+                        outputController.getRoomController().getAndrewTate().setMoney(
+                                outputController.getRoomController().getAndrewTate().getMoney() - 10000
+                        );
+                        break;
+                    } else { outputCommand = "noNineFive"; }
+                }
+                break;
+            case "hit chick":
+                for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
+                    if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
+                            outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
+                            outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "British chick"
+                    )
+                    {
+                        outputCommand = "hitChick";
+                        outputController.getRoomController().getAndrewTate().setFollower(
+                                outputController.getRoomController().getAndrewTate().getFollower() - 1000
+                        );
+                        outputController.getRoomController().getAndrewTate().setMoney(
+                                outputController.getRoomController().getAndrewTate().getMoney() - 100000
+                        );
+                        break;
+                    } else { outputCommand = "noChick"; }
+                }
+                break;
+            case "hit g":
+                for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
+                    if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "G") {
+                        outputCommand = "hitG";
+                        outputController.getRoomController().getAndrewTate().setFollower(
+                                outputController.getRoomController().getAndrewTate().getFollower() - 1
+                        );
+                        break;
+                    } else { outputCommand = "noG"; }
+                }
+                break;
+            case "buy bugatti":
+                if (
+                    outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getBugattiStore()
+                )
+                {
+                    outputController.getRoomController().getAndrewTate().newCar(outputController.getRoomController().getBugattiStore());
+                    outputCommand = "bugattiBought";
+                }
+                break;
+            case "buy lambo":
+                if (
+                    outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getLamboStore()
+                )
+                {
+                    outputController.getRoomController().getAndrewTate().newCar(outputController.getRoomController().getLamboStore());
+                    outputCommand = "lamboBought";
+                }
+                break;
+            case "buy aston martin":
+                if (
+                        outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getAstonMartinStore()
+                )
+                {
+                    outputController.getRoomController().getAndrewTate().newCar(outputController.getRoomController().getAstonMartinStore());
+                    outputCommand = "astonMartinBought";
+                }
+                break;
+            case "buy ferrari":
+                if (
+                        outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getFerrariStore()
+                )
+                {
+                    outputController.getRoomController().getAndrewTate().newCar(outputController.getRoomController().getFerrariStore());
+                    outputCommand = "ferrariBought";
+                }
+                break;
+            case "buy opel":
+                if (
+                        outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getOpelStore()
+                )
+                {
+                    outputController.getRoomController().getAndrewTate().newCar(outputController.getRoomController().getOpelStore());
+                    outputCommand = "opelBought";
+                }
+                break;
         }
-
+        outputController.controlOutput(outputCommand);
+        outputCommand = "";
     }
 }

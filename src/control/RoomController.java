@@ -42,7 +42,7 @@ public class RoomController {
         );
         garage = new Room(
                 "garage",
-                "",
+                andrewTate.getAllCars(),
                 new String[] {}
         );
         bugattiStore = new Room(
@@ -72,7 +72,7 @@ public class RoomController {
                 "Opel store",
                 "OH MY FUCKING GOD WHERE AM I?? I THINK THIS PLACE IS EVEN WORSE THAN THE FRENCH BROTHEL \n" +
                 "Oh God too many NineFivers in here, I need to get out of here",
-                new String[]{"NinveFive"}
+                new String[]{"NineFive"}
         );
 
         currentRoomAndrew = mansion;

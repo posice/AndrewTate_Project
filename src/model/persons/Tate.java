@@ -1,6 +1,7 @@
 package model.persons;
 
 import model.Car;
+import model.Room;
 
 public abstract class Tate {
 
@@ -12,21 +13,33 @@ public abstract class Tate {
         money = 0;
         cars = new Car[1];
         taxDay = 1;
-        cars[0] = new Car("bugatti1", 5, 10000);
+        cars[0] = new Car("bugatti1", "bugatti", 5, 100000);
     }
 
     public double getMoney(){ return money; }
 
     public void setMoney(double money) { this.money = money; }
 
-    public void newCar(Car newCar) { // neues Auto in Array
+    public void newCar(Room currentStore) { // neues Auto in Array
+        Car car = null;
+        if (currentStore.getName() == "Bugatti store") {
+            car = new Car("newBugatti","bugatti",5, 100000);
+        } else if (currentStore.getName() == "Lambo store") {
+            car = new Car("newLambo","lamborghini",4,80000);
+        } else if (currentStore.getName() == "Aston Martin store") {
+            car = new Car("newAston","astonMartin",3,60000);
+        } else if (currentStore.getName() == "Ferrari store") {
+            car = new Car("newFerrari","ferrari",4,85000);
+        } else if (currentStore.getName() == "Opel store") {
+            car = new Car("shit","opel",0,10000);
+        }
         Car[] newCars = new Car[cars.length + 1]; //neues Array mit einem Platz mehr
         for (int i = 0; i < cars.length; i++) {
             newCars[i] = cars[i]; // Car Objekte von altem Array ins neue Array einfügen
         }
-        newCars[newCars.length - 1] = newCar; // an letzte Stelle wird das von uns gekaufte Auto eingefügt
+        newCars[newCars.length - 1] = car; // an letzte Stelle wird das von uns gekaufte Auto eingefügt
         cars = newCars; // Referenzbezeichner zeigt auf neues Array
-        money -= newCar.getPrice(); //Preis von Auto wird von Geld abgezogen
+        money -= car.getPrice(); //Preis von Auto wird von Geld abgezogen
     }
 
     public void sellCar(Car soldCar) { //Auto verkaufen -> ein Car Objekt weniger im Array
@@ -61,6 +74,6 @@ public abstract class Tate {
 
     public abstract void payDay();
     public abstract void payTaxes();
-    public abstract void manageMoney();
+    public abstract void manageVariables();
     //abstrakte Methoden, die in den Unterklassen AndrewTate und TristanTate umgesetzt werden müssen
 }

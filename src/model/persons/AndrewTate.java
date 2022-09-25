@@ -1,7 +1,5 @@
 package model.persons;
 
-import model.Car;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -10,16 +8,29 @@ public class AndrewTate extends Tate {
     private int follower;
 
     public AndrewTate() {
-        follower = 0;
-        manageMoney();
+        follower = 500;
+        manageVariables();
     }
 
     public double getMoney(){ return money; }
     public int getFollower() { return follower;}
 
+    public String getAllCars() {
+        String output = "";
+        for (int i=0; i < cars.length; i++) {
+            output += cars[i].getName() + " ";
+        }
+        return output;
+    }
+
     public void setMoney(double money) { this.money = money; }
     public void setFollower(int follower) { this.follower = follower;}
-    public void setCars(Car[] cars) { this.cars = cars; }
+
+
+    public void generateFollower() {
+        int randomN = (int) (Math.random()*100 -25);
+        follower += randomN;
+    }
 
     @Override
     public void payDay() { //Umsetzen von abstrakter Methode
@@ -29,10 +40,12 @@ public class AndrewTate extends Tate {
     }
 
     @Override
-    public void payTaxes() { money*= 0.9; } // Geld wird von dem Staat abgezogen
+    public void payTaxes() {
+        if (money > 0) money*= 0.9;
+    } // Geld wird von dem Staat abgezogen
 
     @Override
-    public void manageMoney() {
+    public void manageVariables() {
         Timer timer = new Timer();
 
         TimerTask timerTask = new TimerTask() {
@@ -43,9 +56,10 @@ public class AndrewTate extends Tate {
                     payTaxes();  // Steuern werden bezahlt
                 } else { taxDay ++; } // wenn nicht taxday, dann kommt nächster Tag
                 payDay(); // Tate bekommt sein Geld
+                generateFollower();
             }
         };// Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 
-        timer.schedule(timerTask, 0, 5000);
+        timer.schedule(timerTask, 5000, 5000);
     }
 }
