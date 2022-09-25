@@ -11,6 +11,7 @@ import org.nd4j.linalg.factory.Nd4j;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Random;
 
 public class PredictCmd {
     JSONObject jsonObject;
@@ -52,9 +53,19 @@ public class PredictCmd {
         System.out.println("Test " + output[0]);
 
         float[] out = new float[Integer.parseInt("" + output[0].length())];
-        for(int i = 0; i < output[0].length(); i++) out[i] = output[0].getFloat(i) < 0.1 ? 0 : output[0].getFloat(i);
-        for(int i = 0; i < out.length; i++) System.out.print(" - " + out[i]);
-        return 1;
+
+        int maxIndex = -1;
+        for(int i = 0; i < output[0].length(); i++){
+            out[i] = output[0].getFloat(i) < 0.1 ? 0 : output[0].getFloat(i);
+            maxIndex = out[i] > maxIndex ? i : maxIndex;
+        }
+        return maxIndex;
+    }
+
+    public String getAnsFromInt(int i){
+        JSONArray outs = intents.getJSONObject(i).getJSONArray("responses");
+        int rnd = new Random().nextInt(outs.length());
+        return outs.getString(rnd);
     }
 
     private float[][] stringToFloatArray(String cmd){
@@ -64,7 +75,6 @@ public class PredictCmd {
             JSONArray ja = intents.getJSONObject(i).getJSONArray("input");
             for(int j = 0; j < ja.length(); j++){
                 f[0][ti] = cmd.contains(ja.getString(j)) ? 1 : 0;
-                System.out.println(f[0][ti]);
                 ti++;
             }
         }
