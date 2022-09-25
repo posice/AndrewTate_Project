@@ -9,7 +9,7 @@ public class MainController {
     AndrewTate andrewTate = new AndrewTate();
     TristanTate tristanTate = new TristanTate();
     RoomController roomController = new RoomController(andrewTate, tristanTate);
-    CommandController commandController = new CommandController(andrewTate, tristanTate, roomController);
+    CommandController commandController = new CommandController();
     Frame frame = new Frame(commandController);
     OutputController outputController = new OutputController(roomController, frame);
 
