@@ -6,11 +6,11 @@ import java.awt.*;
 public class WinningFrame extends JFrame {
 
 
-    public WinningFrame(){//Neues Frame mit Bild
-        ImageIcon win = new ImageIcon("src/view/Download.png");
+    public WinningFrame(){
+        ImageIcon win = new ImageIcon("src/view/Download.png");//Man instanziiert ein Bild
 
         JLabel winningLabel = new JLabel();
-        winningLabel.setIcon(win);
+        winningLabel.setIcon(win);//Das Bild wird zum Label hinzugefügt
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(322,197);

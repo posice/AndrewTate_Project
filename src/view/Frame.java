@@ -15,7 +15,7 @@ public class Frame extends JFrame{
     public Frame(CommandController commandController){//erstellt das Frme und das Textfield des Panels
         yPosOfPanel = 1;
         this.setSize(1080,600);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Man kann es schließen
         this.setResizable(false);
         this.setTitle("TopGs get rich");
         this.setLayout(null);
@@ -24,7 +24,7 @@ public class Frame extends JFrame{
         outputPanels = new OutputPanel[10];
         commandTextfield = new CommandTextfield(commandController);
         this.setVisible(true);
-        this.add(commandTextfield);
+        this.add(commandTextfield);//Damit man das Textfield sieht
     }
 
     public void win(){//lässt das andere Frame auftauchen, wenn gewonnen wird
@@ -32,10 +32,9 @@ public class Frame extends JFrame{
         winningFrame = new WinningFrame();
     }
 
-    public void printOutput(String output) throws IOException {//Erstellt genau ein Panel, wenn aufgerufen, eins weiter unten. Sollte kein
-                                                                //Platz sein, werden die vorherigen Panels gelöscht
+    public void printOutput(String output) {
         for (int i = yPosOfPanel; i < outputPanels.length; i++){
-            if (yPosOfPanel > 9){
+            if (yPosOfPanel > 9){//Wenn das frame voll ist, werden die Labels "gelöscht und es fängt von Anfang an
                 yPosOfPanel = 1;
                 outputPanels[1].setVisible(false);
                 outputPanels[2].setVisible(false);
@@ -48,7 +47,8 @@ public class Frame extends JFrame{
                 outputPanels[9].setVisible(false);
             }
             outputPanels[i] = new OutputPanel(new OutputLabel("Folgende Infos: " + output), 10, 10 + 50 * yPosOfPanel);
-            this.add(outputPanels[i]);
+            //Am richtigen Ort wird das Label erstellt
+            this.add(outputPanels[i]);//Man fügt das Panel mit dem hinzugefügten Label hinzu
             yPosOfPanel++;//nächstes Mal eins weiter oben
             this.setVisible(false);//aktualisiert das Frame
             this.setVisible(true);
