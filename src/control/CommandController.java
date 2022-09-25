@@ -7,6 +7,7 @@ import model.persons.*;
 import java.io.IOException;
 
 public class CommandController {
+    PredictCmd cm = new PredictCmd();
     String cmd;
     private String outputCommand;
     private OutputController outputController;
@@ -18,7 +19,9 @@ public class CommandController {
 
     public void newOutPutController(OutputController outputController) { this.outputController = outputController; }
 
-    public void controlCommand(String cmd) throws IOException {
+    public void controlCommand(String inp) throws IOException {
+        String cmd = cm.getAnsFromInt(cm.predictAns(inp));
+        System.out.println("cmd: " + cmd + " - " + inp);
         switch (cmd) {
             case "gym":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGym());

@@ -1,5 +1,6 @@
 package control;
 
+import model.tf.PredictCmd;
 import view.Frame;
 
 import java.io.IOException;
