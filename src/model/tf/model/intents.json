@@ -2,62 +2,62 @@
   [
     {
       "tag" : "go_gym",
-      "input" : ["go to gym", "we go gym", "we go jim"],
+      "input" : ["gym", "jim"],
       "responses": [ "GT gym" ]
     },
     {
       "tag" : "go_mansion",
-      "input" : ["go to mansion", "we go mansion"],
+      "input" : ["mansion"],
       "responses": [ "GT mansion" ]
     },
     {
       "tag" : "go_frenchbrothel",
-      "input" : ["go to frenchbrothel", "we go frenchbrothel"],
+      "input" : ["frenchbrothel"],
       "responses": [ "GT frenchbrothel" ]
     },
     {
       "tag" : "go_garage",
-      "input" : ["go to garage", "we go garage"],
+      "input" : ["garage"],
       "responses": [ "GT garage" ]
     },
     {
       "tag" : "go_bugattistore",
-      "input" : ["go to bugattistore"],
+      "input" : ["bugattistore"],
       "responses": [ "GT bugattistore" ]
     },
     {
       "tag" : "go_lambostore",
-      "input" : ["go to lambostore"],
+      "input" : ["lambostore"],
       "responses": [ "GT lambostore" ]
     },
     {
       "tag" : "go_astonmartinstore",
-      "input" : ["go to astonmartinstore"],
+      "input" : ["astonmartinstore"],
       "responses": [ "GT astonmartinstore" ]
     },
     {
       "tag" : "go_ferraristore",
-      "input" : ["go to ferraristore"],
+      "input" : ["ferraristore"],
       "responses": [ "GT ferraristore" ]
     },
     {
       "tag" : "go_opelstore",
-      "input" : ["go to opelstore"],
+      "input" : ["opelstore"],
       "responses": [ "GT opelstore" ]
     },
     {
       "tag" : "talk_chick",
-      "input" : ["talk to chick", "hello chick"],
+      "input" : ["chick", "hello chick"],
       "responses": [ "talks to chick" ]
     },
     {
       "tag" : "talk ninefive",
-      "input" : ["talk to chick", "hello chick"],
+      "input" : ["ninefive"],
       "responses": [ "talks to ninefive" ]
     },
     {
       "tag" : "talk topg",
-      "input" : ["talk to topg", "hello topg"],
+      "input" : ["topg"],
       "responses": [ "talks to topg" ]
     }
   ]
