@@ -20,7 +20,7 @@ public class Frame extends JFrame{
         this.setTitle("TopGs get rich");
         this.setLayout(null);
         this.getContentPane().setBackground(Color.black);
-        this.getContentPane().setBackground(new Color(89,47,34));
+        this.getContentPane().setBackground(new Color(184,115,51));
         outputPanels = new OutputPanel[11];
         commandTextfield = new CommandTextfield(commandController);
         this.setVisible(true);

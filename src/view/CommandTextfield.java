@@ -18,7 +18,7 @@ public class CommandTextfield extends JTextField implements KeyListener {
         this.setHorizontalAlignment(JTextField.LEFT);
         this.setForeground(Color.WHITE);
         this.setCaretColor(Color.WHITE);
-        this.setBackground(new Color(89,47,34));
+        this.setBackground(new Color(184,115,51));
         this.setBounds(0,525,540,40);
         this.setBorder(border);
         this.addKeyListener(this);
