@@ -6,7 +6,7 @@ import java.awt.*;
 public class WinningFrame extends JFrame {
 
 
-    public WinningFrame(){
+    public WinningFrame(){//Neues Frame mit Bild
         ImageIcon win = new ImageIcon("src/view/Download.png");
 
         JLabel winningLabel = new JLabel();

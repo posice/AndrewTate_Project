@@ -10,9 +10,9 @@ import java.awt.event.KeyListener;
 
 public class CommandTextfield extends JTextField implements KeyListener {
 
-    private CommandController commandController;
+    private CommandController commandController;//um dem CommandController den Text zu geben
 
-    public CommandTextfield(CommandController commandController){
+    public CommandTextfield(CommandController commandController){//erstellt das Textfield
         this.commandController = commandController;
         Border border = BorderFactory.createLineBorder(Color.white);
         this.setHorizontalAlignment(JTextField.LEFT);
@@ -25,7 +25,7 @@ public class CommandTextfield extends JTextField implements KeyListener {
         this.setVisible(true);
     }
 
-    public String getCommand(){
+    public String getCommand(){//kann den eingegeben Text weitergeben
         String command = this.getText();
         this.setText("");
         return command;
