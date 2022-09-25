@@ -21,17 +21,61 @@ public class RoomController {
     public RoomController(AndrewTate andrewTate, TristanTate tristanTate) {
         this.andrewTate = andrewTate;
         this.tristanTate = tristanTate;
-        mansion = new Room("mansion", "", new String[]{"chick", "Tristan"});
+
+        mansion = new Room(
+                "mansion",
+                "You are now in the mansion, there is a chick waiting for you",
+                new String[] {"chick", "Tristan"}
+        );
+        frenchBrothel = new Room(
+                "french brothel",
+                "Ooooo a very disgusting place: the french brothel, there are French "
+                + "chicks and ninefive workers everywhere, you better run away from here",
+                new String[] {"chick", "NineFive"}
+        );
+        gym = new Room(
+                "gym",
+                "G, you arrived at the gym! It's time to fight and train and by the way, you can talk to some true Gs"
+                + " in here",
+                new String[] {"G"}
+        );
+        garage = new Room(
+                "garage",
+                "",
+                new String[] {}
+        );
+        bugattiStore = new Room(
+                "Bugatti store",
+                "YESSSS, BUGATTIS EVERYWHERE, PLEASE, YOU NEED TO BUY ONE OF THOSE BEAUTIES \n" +
+                "There are also chicks and Gs in here who you can talk to",
+                new String[] {"G", "chick"}
+        );
+        lamboStore = new Room(
+                "Lambo store",
+                "Lambos, nice, you might buy one just to let people know that you can actually afford it \n" +
+                "no chicks here unfortunately, but a lot of Gs looking at their future cars",
+                new String[] {"G"}
+        );
+        astonMartinStore = new Room(
+                "Aston Martin store",
+                "British cars hmmmm, those are cool but London is still a terrible city" +
+                "but you know what British chicks are special and there are a few in here, also a lot of British Gs",
+                new String[] {"G", "British chick"}
+        );
+        ferrariStore = new Room(
+                "Ferrari store",
+                "Ferraris, not as good as Bugattis but second best \n" + "Italian chicks and alpha males(Gs), marvelous",
+                new String[] {"G","Italian chick"}
+        );
+        opelStore = new Room(
+                "Opel store",
+                "OH MY FUCKING GOD WHERE AM I?? I THINK THIS PLACE IS EVEN WORSE THAN THE FRENCH BROTHEL \n" +
+                "Oh God too many NineFivers in here, I need to get out of here",
+                new String[]{"NinveFive"}
+        );
+
         currentRoomAndrew = mansion;
         currentRoomTristan = mansion;
-        frenchBrothel = new Room("french brothel", "", new String[]{"chick", "NineFive"});
-        gym = new Room("gym", "", new String[]{"G"});
-        garage = new Room("garage", "", new String[]{});
-        bugattiStore = new Room("Bugatti store", "", new String[]{"G", "chick"});
-        lamboStore = new Room("Lambo store", "", new String[]{"G"});
-        astonMartinStore = new Room("Aston Martin store", "", new String[]{"G", "chick"});
-        ferrariStore = new Room("Ferrari store", "", new String[]{"G"});
-        opelStore = new Room("Opel store", "", new String[]{"NinveFive"});
     }
 
     public Room getCurrentRoomAndrew() { return currentRoomAndrew; }
