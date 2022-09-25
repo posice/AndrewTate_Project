@@ -56,9 +56,9 @@
       "responses": [ "talks to ninefive" ]
     },
     {
-      "tag" : "talk topg",
-      "input" : ["talk to topg", "hello topg"],
-      "responses": [ "talks to topg" ]
+      "tag" : "talk g",
+      "input" : ["talk to g", "hello g"],
+      "responses": [ "talks to g" ]
     }
   ]
 }

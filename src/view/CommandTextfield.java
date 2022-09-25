@@ -40,7 +40,6 @@ public class CommandTextfield extends JTextField implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER){
             commandController.controlCommand(this.getCommand());
-            System.out.println(this.getCommand());
         }
     }
 
