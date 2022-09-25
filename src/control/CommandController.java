@@ -8,30 +8,59 @@ public class CommandController {
     String cmd;
     int cmdId;
     PredictCmd pcmd; //Hey
-    private AndrewTate andrewTate;
-    private TristanTate tristanTate;
-    private RoomController roomController;
+    private String outputCommand;
+    private OutputController outputController;
 
-    public CommandController(AndrewTate andrewTate, TristanTate tristanTate, RoomController roomController){
-        this.andrewTate = andrewTate;
-        this.tristanTate = tristanTate;
-        this.roomController = roomController;
+    public CommandController(){
         cmd = "";
+        outputCommand = "";
         pcmd = new PredictCmd();
     }
+
+    public void newOutPutController(OutputController outputController) { this.outputController = outputController; }
+
+    public String getOutputCommand() { return outputCommand; }
 
     public void controlCommand(String cmd) {
         this.cmdId = pcmd.predictAns(cmd);
         switch (cmdId) {
-            case 1: roomController.setCurrentRoomAndrew(roomController.getGym());
-            case 2: roomController.setCurrentRoomAndrew(roomController.getMansion());
-            case 3: roomController.setCurrentRoomAndrew(roomController.getFrenchBrothel());
-            case 4: roomController.setCurrentRoomAndrew(roomController.getGarage());
-            case 5: roomController.setCurrentRoomAndrew(roomController.getBugattiStore());
-            case 6: roomController.setCurrentRoomAndrew(roomController.getLamboStore());
-            case 7: roomController.setCurrentRoomAndrew(roomController.getAstonMartinStore());
-            case 8: roomController.setCurrentRoomAndrew(roomController.getFerrariStore());
-            case 9: roomController.setCurrentRoomAndrew(roomController.getOpelStore());
+            case 1:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGym());
+                outputCommand = "goGym";
+                break;
+            case 2:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getMansion());
+                outputCommand = "goMansion";
+                break;
+            case 3:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFrenchBrothel());
+                outputCommand = "goFrenchBrothel";
+                break;
+            case 4:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGarage());
+                outputCommand = "goGarage";
+                break;
+            case 5:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getBugattiStore());
+                outputCommand = "goBugattiStore";
+                break;
+            case 6:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getLamboStore());
+                outputCommand = "goLamboStore";
+                break;
+            case 7:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getAstonMartinStore());
+                outputCommand = "goAstonMartinStore";
+                break;
+            case 8:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFerrariStore());
+                outputCommand = "goFerrariStore";
+                break;
+            case 9:
+                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getOpelStore());
+                outputCommand = "goOpelStore";
+                break;
         }
+
     }
 }
