@@ -12,22 +12,21 @@ public class CommandTextfield extends JTextField implements KeyListener {
 
     private CommandController commandController;//um dem CommandController den Text zu geben
 
-    public CommandTextfield(CommandController commandController){//erstellt das Textfield
-        this.commandController = commandController;
-        Border border = BorderFactory.createLineBorder(Color.white);
-        this.setHorizontalAlignment(JTextField.LEFT);
-        this.setForeground(Color.WHITE);
+    public CommandTextfield(CommandController commandController){
+        this.commandController = commandController;//Conroller wird benötigt für später
+        Border border = BorderFactory.createLineBorder(Color.white);//Umrandung
+        this.setHorizontalAlignment(JTextField.LEFT);//Wo ist der Text
+        this.setForeground(Color.WHITE);//Text und Cursor Farbe
         this.setCaretColor(Color.WHITE);
-        this.setBackground(new Color(184,115,51));
-        this.setBounds(0,525,540,40);
+        this.setBackground(new Color(184,115,51));//Ffeldfarbe
+        this.setBounds(0,525,540,40);//Ort
         this.setBorder(border);
         this.addKeyListener(this);
-        this.setVisible(true);
     }
 
-    public String getCommand(){//kann den eingegeben Text weitergeben
-        String command = this.getText();
-        this.setText("");
+    public String getCommand(){
+        String command = this.getText();//command enthält den String des Felds
+        this.setText("");//Text wird entfernt
         return command;
     }
 
@@ -38,11 +37,11 @@ public class CommandTextfield extends JTextField implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER){
-            commandController.controlCommand(this.getCommand());
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && getCommand()!= ""){
+            commandController.controlCommand(this.getCommand());// wenn man enter drückt, wird controlCommand aufgerufen und das Feld geleert
         }
     }
-
+// wenn man enter drückt, wird controlCommand aufgerufen und das Feld geleert
     @Override
     public void keyReleased(KeyEvent e) {
 

@@ -12,6 +12,7 @@ public class MainController {
     CommandController commandController = new CommandController();
     Frame frame = new Frame(commandController);
     OutputController outputController = new OutputController(roomController, frame);
+    WinController winController = new WinController(andrewTate, frame);
 
     public void control(){
         PredictCmd cm = new PredictCmd();
