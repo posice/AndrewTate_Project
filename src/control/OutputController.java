@@ -24,6 +24,7 @@ public class OutputController {
                 if (roomController.getCurrentRoomTristan() == roomController.getGym()) {
                     frame.printOutput("\n Your brother Tristan is in here as well");
                 }
+                System.out.println("lellek");
                 break;
             case "goMansion":
                 frame.printOutput(roomController.getMansion().getInfo());

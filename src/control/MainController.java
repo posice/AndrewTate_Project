@@ -5,6 +5,8 @@ import model.persons.TristanTate;
 import model.tf.PredictCmd;
 import view.Frame;
 
+import java.io.IOException;
+
 public class MainController {
     AndrewTate andrewTate = new AndrewTate();
     TristanTate tristanTate = new TristanTate();
@@ -22,6 +24,10 @@ public class MainController {
     }
 
     public void passCmd(String cmd){
-        commandController.controlCommand(cmd);
+        try {
+            commandController.controlCommand(cmd);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

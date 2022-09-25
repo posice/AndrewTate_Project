@@ -7,8 +7,9 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Objects;
 
-public class CommandTextfield extends JTextField implements KeyListener {
+public class CommandTextfield extends JTextField {
 
     private CommandController commandController;//um dem CommandController den Text zu geben
 
@@ -21,7 +22,6 @@ public class CommandTextfield extends JTextField implements KeyListener {
         this.setBackground(new Color(184,115,51));//Ffeldfarbe
         this.setBounds(0,525,540,40);//Ort
         this.setBorder(border);
-        this.addKeyListener(this);
     }
 
     public String getCommand(){
@@ -30,20 +30,7 @@ public class CommandTextfield extends JTextField implements KeyListener {
         return command;
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER && getCommand()!= ""){
-            commandController.controlCommand(this.getCommand());// wenn man enter drückt, wird controlCommand aufgerufen und das Feld geleert
-        }
-    }
-// wenn man enter drückt, wird controlCommand aufgerufen und das Feld geleert
-    @Override
-    public void keyReleased(KeyEvent e) {
-
+    public CommandController getCommandController() {
+        return commandController;
     }
 }
