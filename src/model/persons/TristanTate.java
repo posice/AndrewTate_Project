@@ -18,15 +18,19 @@ public class TristanTate extends Tate {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
-            public void run() {
-                double randomN = Math.random();
+            public void run() { // Timer für alle 20 Sekunden
+                double randomN = Math.random(); // random Zahl
                 if (randomN < 0.05) {
-                    kids++;
+                    kids++; //neues Kind
                 } else if (randomN == 0.99) {
-                    kids--;
-                    money += 5000;
+                    kids--; //Kind stirbt
+                    money += 5000; //Lebensversicherung
                 }
-                payDay();
+                if (taxDay == 4){ //jeden viertan Tag werden Steuern gezahlt
+                    taxDay = 1;  //zurücksetzen auf ersten Tag
+                    payTaxes();  // Steuern werden bezahlt
+                } else { taxDay ++; } // wenn nicht taxday, dann kommt nächster Tag
+                payDay(); //bekommt Geld
             }
         };// Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 
@@ -34,11 +38,10 @@ public class TristanTate extends Tate {
     }
 
     @Override
-    public void payTaxes() { money *= 0.95; }
+    public void payTaxes() { money *= 0.95; } // Geld wird von dem Staat abgezogen
 
     @Override
     public void payDay() {
         money += (int)(Math.random()*1000); //Geld was durch Arbeit verdient wird
-        money += addUpCarMoney();
     }
 }

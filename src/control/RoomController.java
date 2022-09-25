@@ -22,6 +22,7 @@ public class RoomController {
         this.andrewTate = andrewTate;
         this.tristanTate = tristanTate;
 
+        // In den folgenden Zeilen werden alle verschiedenen Rooms erstellt
         mansion = new Room(
                 "mansion",
                 "You are now in the mansion, there is a chick waiting for you",
@@ -80,8 +81,6 @@ public class RoomController {
 
     public Room getCurrentRoomAndrew() { return currentRoomAndrew; }
     public Room getCurrentRoomTristan() { return currentRoomTristan; }
-    public AndrewTate getAndrewTate() { return andrewTate; }
-    public TristanTate getTristanTate() { return tristanTate; }
     public Room getMansion() { return mansion; }
     public Room getFrenchBrothel() { return frenchBrothel; }
     public Room getGym() { return gym; }
@@ -91,19 +90,20 @@ public class RoomController {
     public Room getAstonMartinStore() { return astonMartinStore; }
     public Room getFerrariStore() { return ferrariStore; }
     public Room getOpelStore() { return opelStore; }
+    public AndrewTate getAndrewTate() { return andrewTate; }
+    public TristanTate getTristanTate() { return tristanTate; }
 
-    //public void setCurrentRoomTristan (Room newRoom) { currentRoomTristan = newRoom; }
     public void setCurrentRoomAndrew(Room newRoom) { currentRoomAndrew = newRoom; }
 
-    public void setRandomRoom(Tate tate) { //Subtyping Methode
-        int randomN = (int)(Math.random()*100);
-        if (randomN < 40) {
-            if (tate == tristanTate) {
-                currentRoomTristan.setTristanOutRoom();
-                mansion.setTristanInRoom();
+    public void setRandomRoom(Tate tate) { //Subtyping Methode, ein random Room wird für einen beliebigen Tate gesetzt
+        int randomN = (int)(Math.random()*100); //random Zahl von 0 bis 99
+        if (randomN < 40) { //wemm kleiner als 40
+            if (tate == tristanTate) { // wenn Parameter tristanTate ist
+                currentRoomTristan.setTristanOutRoom(); // Tristan wird aus seinem aktuellen Zimmer entfernt
+                mansion.setTristanInRoom(); //wird in Mansion gesetzt
                 currentRoomTristan = mansion;
-            } else {
-                currentRoomAndrew = mansion;
+            } else { // wenn Parameter AndrewTate ist
+                currentRoomAndrew = mansion; // Andrew wird in die Mansion gesetzt
             }
 
         } else if (randomN < 44) {

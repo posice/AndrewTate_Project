@@ -16,3 +16,5 @@ public class Car {
     public int getCoolness() { return coolness; }
     public int getPrice() { return price; }
 }
+
+//Containerklasse: speichert nur wichtige Daten über Auto

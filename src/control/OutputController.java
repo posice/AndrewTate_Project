@@ -84,12 +84,12 @@ public class OutputController {
         }
     }
 
-     public String getInfos() {
+    public String getInfos() { // Ausgabe von allen wichtigen Informationen durch typecast
+        // alle wichtigen Informationen werden konkatiniert
         String infos = "Andrew Tate: follower: " + roomController.getAndrewTate().getFollower() + " money: " +
                 roomController.getAndrewTate().getMoney() + "current location: " + roomController.getCurrentRoomAndrew().getName() +
                 "\n" + "Tristan Tate: money: " + roomController.getTristanTate().getMoney() + "location: " +
                 roomController.getCurrentRoomTristan().getName();
-        return infos;
-    } //typeCast
-
+        return infos; // der neu zusammengesetzte String wird zurückgegeben
+    }
 }
