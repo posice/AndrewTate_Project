@@ -20,18 +20,18 @@ public class CommandController {
     public void newOutPutController(OutputController outputController) { this.outputController = outputController; }
 
     public void controlCommand(String inp) throws IOException {
-        String cmd = cm.getAnsFromInt(cm.predictAns(inp));
+        String cmd = cm.getClassFromInt(cm.predictAns(inp));
         System.out.println("cmd: " + cmd + " - " + inp);
         switch (cmd) {
-            case "gym":
+            case "gtgym":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGym());
                 outputCommand = "goGym";
                 break;
-            case "mansion":
+            case "gtmansion":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getMansion());
                 outputCommand = "goMansion";
                 break;
-            case "french brothel":
+            case "gtfrenchbrothel":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFrenchBrothel());
                 outputCommand = "goFrenchBrothel";
                 break;
@@ -39,33 +39,33 @@ public class CommandController {
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGarage());
                 outputCommand = "goGarage";
                 break;
-            case "bugatti store":
+            case "bugatti_store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getBugattiStore());
                 outputCommand = "goBugattiStore";
                 break;
-            case "lambo store":
+            case "lambo_store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getLamboStore());
                 outputCommand = "goLamboStore";
                 break;
-            case "aston martin store":
+            case "aston_martin_store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getAstonMartinStore());
                 outputCommand = "goAstonMartinStore";
                 break;
-            case "ferrari store":
+            case "ferrari_store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFerrariStore());
                 outputCommand = "goFerrariStore";
                 break;
-            case "opel store":
+            case "opel_store":
                 outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getOpelStore());
                 outputCommand = "goOpelStore";
                 break;
-            case "infos":
+            case "get_infos":
                 outputCommand = "getInfos";
                 break;
             case "commands":
                 outputCommand = "getCommands";
                 break;
-            case "have fun":
+            case "have_fun":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
                         outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
@@ -82,8 +82,8 @@ public class CommandController {
                         break;
                     } else { outputCommand = "noChick"; }
                 }
-                break;
-            case "hit nine five":
+                break; //Hier weitermachen
+            case "hit_nine_five":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "NineFive") {
                         outputCommand = "hitNineFive";
@@ -115,7 +115,7 @@ public class CommandController {
                     } else { outputCommand = "noChick"; }
                 }
                 break;
-            case "hit g":
+            case "hit_g":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "G") {
                         outputCommand = "hitG";
@@ -126,7 +126,7 @@ public class CommandController {
                     } else { outputCommand = "noG"; }
                 }
                 break;
-            case "buy bugatti":
+            case "buy_bugatti":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getBugattiStore()
                 )
@@ -135,7 +135,7 @@ public class CommandController {
                     outputCommand = "bugattiBought";
                 }
                 break;
-            case "buy lambo":
+            case "buy_lambo":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getLamboStore()
                 )
@@ -144,7 +144,7 @@ public class CommandController {
                     outputCommand = "lamboBought";
                 }
                 break;
-            case "buy aston martin":
+            case "buy_aston_martin":
                 if (
                         outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getAstonMartinStore()
                 )
@@ -153,7 +153,7 @@ public class CommandController {
                     outputCommand = "astonMartinBought";
                 }
                 break;
-            case "buy ferrari":
+            case "buy_ferrari":
                 if (
                         outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getFerrariStore()
                 )
@@ -162,7 +162,7 @@ public class CommandController {
                     outputCommand = "ferrariBought";
                 }
                 break;
-            case "buy opel":
+            case "buy_opel":
                 if (
                         outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getOpelStore()
                 )

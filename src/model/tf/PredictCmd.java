@@ -72,10 +72,8 @@ public class PredictCmd {
         return maxIndex;
     }
 
-    public String getAnsFromInt(int i){
-        JSONArray outs = intents.getJSONObject(i).getJSONArray("responses");
-        int rnd = new Random().nextInt(outs.length());
-        return outs.getString(rnd);
+    public String getClassFromInt(int i){
+        return jsonObject.getJSONArray("classes").getString(i);
     }
 
     private float[][] stringToFloatArray(String cmd){

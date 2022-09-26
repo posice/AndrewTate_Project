@@ -20,7 +20,7 @@ public class MainController {
         PredictCmd cm = new PredictCmd();
         commandController.newOutPutController(outputController);
         //cm.doSth();
-        System.out.println(cm.getAnsFromInt(cm.predictAns("hey")));
+        System.out.println(cm.getClassFromInt(cm.predictAns("hey")));
     }
 
     public void passCmd(String cmd){
