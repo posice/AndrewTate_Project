@@ -9,7 +9,10 @@ public class OutputController {
     private RoomController roomController;
     private Frame frame;
     private String[] allCommands = {"gym", "mansion", "french brothel", "garage", "bugatti store", "lambo store",
-            "aston martin store", "ferrari store", "opel store", "infos", "commands" };
+            "aston martin store", "ferrari store", "opel store", "infos", "commands", "have fun", "hit nine five",
+            "hit chick", "hit g", "buy bugatti", "buy lambo", "buy aston martin", "buy ferrari", "buy opel", "talk to chick",
+            "talk to g", "talk to nine five", "talk to tristan"
+    };
 
     public OutputController(RoomController roomController, Frame frame) {
         this.roomController = roomController;
@@ -133,6 +136,50 @@ public class OutputController {
             case "opelBought":
                 frame.printOutput("Eww an ugly opel");
                 break;
+            case "talkG":
+                frame.printOutput("hey yo topG, wassup? i have earned a lot of money because of you, so here, just take some of it");
+                break;
+            case "talkChick":
+                frame.printOutput("Ohhhh Andrew I'm int THE MOOD");
+                break;
+            case "talkItalianChick":
+                frame.printOutput("uuu andrew, you wanna put your cheese on my pizza");
+                break;
+            case "talkBritishChick":
+                frame.printOutput("andrew mai, could u please give me a cup of wa'er");
+                break;
+            case "talkNineFive":
+                frame.printOutput("I swear TopG, I am gonna stop vaping and join the hustlers university");
+                break;
+            case "tristan1":
+                frame.printOutput("Hey Brother, how's life?");
+                break;
+            case "tristan2":
+                frame.printOutput("Hey Brother, here is some money I just wanted to give you because I have too much");
+                break;
+            case "tristan3":
+                frame.printOutput("Hey Brother, give me some money, I wanna buy a new car");
+                break;
+            case "noTristan":
+                frame.printOutput("Tristan is not in this room");
+                break;
+            /*case "bugattiSold":
+                frame.printOutput("well, you just sold a bugatti, insert heart breaking sound");
+                break;
+            case "lamboSold":
+                frame.printOutput("well, you just sold a lambo, insert heart breaking sound");
+                break;
+            case "astonMartinSold":
+                frame.printOutput("well, you just sold an Aston Martin, insert heart breaking sound");
+                break;
+            case "ferrariSold":
+                frame.printOutput("well, you just sold a ferrari, insert heart breaking sound");
+                break;
+            case "opelSold":
+                frame.printOutput("oh finally you sold that piece of garbage");
+                break;
+             */
+
         }
     }
 

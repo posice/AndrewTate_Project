@@ -26,7 +26,7 @@ public class RoomController {
         mansion = new Room(
                 "mansion",
                 "You are now in the mansion, there is a chick waiting for you",
-                new String[] {"chick", "Tristan"}
+                new String[] {"chick"}
         );
         frenchBrothel = new Room(
                 "french brothel",

@@ -3,13 +3,11 @@ package model;
 public class Car {
 
     private final String name;
-    private final String company;
     private final int coolness;
     private final int price;
 
-    public Car(String name, String company, int coolness, int price) {
+    public Car(String name, int coolness, int price) {
         this.name = name;
-        this.company = company;
         this.coolness = coolness;
         this.price = price;
     }
