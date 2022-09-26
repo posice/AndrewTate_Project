@@ -19,18 +19,18 @@ public class OutputController {
         this.frame = frame;
     }
 
-    public RoomController getRoomController() { return roomController; }
+    public RoomController getRoomController() { return roomController; } // für die losee Kopplung
 
-    public void controlOutput(String outputCommand) throws IOException {
-        switch (outputCommand) {
-            case "":
-                frame.printOutput("Excuse me what the hell did you just say?");
-                break;
-            case "goGym":
-                frame.printOutput(roomController.getGym().getInfo());
-                roomController.setCurrentRoomAndrew(roomController.getGym());
-                if (roomController.getCurrentRoomTristan() == roomController.getGym()) {
-                    frame.printOutput("\n Your brother Tristan is in here as well");
+    public void controlOutput(String outputCommand) throws IOException { //kontrolliert den Output
+        switch (outputCommand) { //bekommt im CommandController ein Command
+            case "": //Wenn command leer ist
+                frame.printOutput("Excuse me what the hell did you just say?"); //spieler weiß, dass er
+                break; //etwas anderes eintippen muss
+            case "goGym": //command "goGyM"
+                frame.printOutput(roomController.getGym().getInfo()); //Info zum Gym im Frame
+                roomController.setCurrentRoomAndrew(roomController.getGym()); //Andrews Pos wird geändert
+                if (roomController.getCurrentRoomTristan() == roomController.getGym()) { //wenn Tristan im Gym ist
+                    frame.printOutput("\n Your brother Tristan is in here as well"); //Spieler wird benachrichtigt
                 }
                 break;
             case "goMansion":
@@ -90,17 +90,17 @@ public class OutputController {
                 }
                 break;
             case "getInfos":
-                frame.printOutput(getInfos());
+                frame.printOutput(getInfos()); //alle Infos werden zurückgegeben
                 break;
-            case "getCommands":
-                String output = "";
-                for (int i=0; i < allCommands.length; i++) {
-                    if (i == allCommands.length - 1) { output += allCommands[i]; }
-                    else { output += allCommands[i] + ", "; }
+            case "getCommands": // alle möglichen Commands werden angegegben
+                String output = ""; //neue String variable
+                for (int i=0; i < allCommands.length; i++) { //arrray allCommands durchlaufen
+                    if (i == allCommands.length - 1) { output += allCommands[i]; }  //an letzter Stelle wird letzter command eingefügt
+                    else { output += allCommands[i] + ", "; } // alle Commands werden durch ein Komma getrennt
                 }
                 frame.printOutput(output);
                 break;
-            case "noNineFive":
+            case "noNineFive": //wenn im Room kein Nine Five ist
                 frame.printOutput("no Nine Fives in here :(");
                 break;
             case "noChick":

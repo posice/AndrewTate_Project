@@ -8,7 +8,7 @@ public class AndrewTate extends Tate {
     private int follower;
 
     public AndrewTate() {
-        follower = 500;
+        follower = 1000;
         manageVariables();
     }
 
@@ -39,10 +39,10 @@ public class AndrewTate extends Tate {
         money += addUpCarMoney(); // Geld für Autos
     }
 
-    @Override
+    /*@Override
     public void payTaxes() {
         if (money > 0) money*= 0.9;
-    } // Geld wird von dem Staat abgezogen
+    } // Geld wird von dem Staat abgezogen */
 
     @Override
     public void manageVariables() {
@@ -53,10 +53,10 @@ public class AndrewTate extends Tate {
             public void run() { //Timer für alle 5 Sekunden
                 if (taxDay == 4){ //jeden viertan Tag werden Steuern gezahlt
                     taxDay = 1;  //zurücksetzen auf ersten Tag
-                    payTaxes();  // Steuern werden bezahlt
+                    //payTaxes();  // Steuern werden bezahlt
                 } else { taxDay ++; } // wenn nicht taxday, dann kommt nächster Tag
                 payDay(); // Tate bekommt sein Geld
-                generateFollower();
+                generateFollower(); // Followerzahl wird vergrößert
             }
         };// Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 

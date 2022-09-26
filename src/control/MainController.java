@@ -8,6 +8,7 @@ import view.Frame;
 import java.io.IOException;
 
 public class MainController {
+    //alle Objekte werden hier erstellt
     AndrewTate andrewTate = new AndrewTate();
     TristanTate tristanTate = new TristanTate();
     RoomController roomController = new RoomController(andrewTate, tristanTate);
@@ -18,9 +19,8 @@ public class MainController {
 
     public void control(){
         PredictCmd cm = new PredictCmd();
-        commandController.newOutPutController(outputController);
+        commandController.newOutPutController(outputController); //commandController Assoziation 0..1 zu outputController
         //cm.doSth();
-        System.out.println(cm.getAnsFromInt(cm.predictAns("frenchbrothel")));
     }
 
     public void passCmd(String cmd){

@@ -19,41 +19,32 @@ public class CommandController {
     public void newOutPutController(OutputController outputController) { this.outputController = outputController; }
 
     public void controlCommand(String cmd) throws IOException {
-        switch (cmd) {
-            case "gym":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGym());
+        switch (cmd) { //cmd aus Textfield
+            case "gym": //wenn "gym" eingegeben wird
                 outputCommand = "goGym";
                 break;
             case "mansion":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getMansion());
                 outputCommand = "goMansion";
                 break;
             case "french brothel":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFrenchBrothel());
                 outputCommand = "goFrenchBrothel";
                 break;
             case "garage":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getGarage());
                 outputCommand = "goGarage";
                 break;
             case "bugatti store":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getBugattiStore());
                 outputCommand = "goBugattiStore";
                 break;
             case "lambo store":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getLamboStore());
                 outputCommand = "goLamboStore";
                 break;
             case "aston martin store":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getAstonMartinStore());
                 outputCommand = "goAstonMartinStore";
                 break;
             case "ferrari store":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getFerrariStore());
                 outputCommand = "goFerrariStore";
                 break;
             case "opel store":
-                outputController.getRoomController().setCurrentRoomAndrew(outputController.getRoomController().getOpelStore());
                 outputCommand = "goOpelStore";
                 break;
             case "infos":
@@ -62,34 +53,34 @@ public class CommandController {
             case "commands":
                 outputCommand = "getCommands";
                 break;
-            case "have fun":
+            case "have fun": //SEX
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
                         outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
                         outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "British chick"
-                    )
+                    )  //jede Art Chick
                     {
                         outputCommand = "haveFun";
                         outputController.getRoomController().getAndrewTate().setFollower(
                                 outputController.getRoomController().getAndrewTate().getFollower() + 100
-                        );
+                        ); //mehr Follower
                         outputController.getRoomController().getAndrewTate().setMoney(
                                 outputController.getRoomController().getAndrewTate().getMoney() - 1000
-                        );
+                        ); //Chick will Geld (keine Prostitution)
                         break;
-                    } else { outputCommand = "noChick"; }
+                    } else { outputCommand = "noChick"; } // wenn chick nicht im room ändert sich cmd
                 }
                 break;
-            case "hit nine five":
+            case "hit nine five": // nine five schlagen
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
-                    if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "NineFive") {
+                    if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "NineFive") { //wenn nine five im zimmer ist
                         outputCommand = "hitNineFive";
                         outputController.getRoomController().getAndrewTate().setFollower(
                                 outputController.getRoomController().getAndrewTate().getFollower() + 1000
-                        );
+                        ); //neue follower
                         outputController.getRoomController().getAndrewTate().setMoney(
                                 outputController.getRoomController().getAndrewTate().getMoney() - 10000
-                        );
+                        ); //weniger geld
                         break;
                     } else { outputCommand = "noNineFive"; }
                 }
@@ -97,17 +88,17 @@ public class CommandController {
             case "hit chick":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
-                            outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
-                            outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "British chick"
-                    )
+                        outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
+                        outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "British chick"
+                    ) //wenn chick im zimmer ist
                     {
                         outputCommand = "hitChick";
                         outputController.getRoomController().getAndrewTate().setFollower(
                                 outputController.getRoomController().getAndrewTate().getFollower() - 1000
-                        );
+                        ); //weniger follower
                         outputController.getRoomController().getAndrewTate().setMoney(
                                 outputController.getRoomController().getAndrewTate().getMoney() - 100000
-                        );
+                        ); //weniger Geld
                         break;
                     } else { outputCommand = "noChick"; }
                 }
@@ -126,9 +117,11 @@ public class CommandController {
             case "buy bugatti":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getBugattiStore()
-                )
+                ) //nur wenn in bugatti store
                 {
-                    outputController.getRoomController().getAndrewTate().newCar(outputController.getRoomController().getBugattiStore());
+                    outputController.getRoomController().getAndrewTate().newCar(
+                            outputController.getRoomController().getBugattiStore()
+                    ); // neues auto
                     outputCommand = "bugattiBought";
                 }
                 break;
@@ -292,7 +285,7 @@ public class CommandController {
                 } else { outputCommand = "wrongStore"; }
                 break; */
         }
-        outputController.controlOutput(outputCommand);
-        outputCommand = "";
+        outputController.controlOutput(outputCommand); //outputController wird aufgerufen
+        outputCommand = ""; //outputCommand ist null, sodass man nicht einfach irgendwas eingeben kann
     }
 }

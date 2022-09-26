@@ -27,7 +27,7 @@ public class TristanTate extends Tate {
                 }
                 if (taxDay == 4){ //jeden viertan Tag werden Steuern gezahlt
                     taxDay = 1;  //zurücksetzen auf ersten Tag
-                    payTaxes();  // Steuern werden bezahlt
+                    //payTaxes();  // Steuern werden bezahlt
                 } else { taxDay ++; } // wenn nicht taxday, dann kommt nächster Tag
                 payDay(); //bekommt Geld
             }
@@ -36,8 +36,8 @@ public class TristanTate extends Tate {
         timer.schedule(task, 5000 ,20000);
     }
 
-    @Override
-    public void payTaxes() { money *= 0.95; } // Geld wird von dem Staat abgezogen
+    /*@Override
+    public void payTaxes() { money *= 0.95; } // Geld wird von dem Staat abgezogen*/
 
     @Override
     public void payDay() {

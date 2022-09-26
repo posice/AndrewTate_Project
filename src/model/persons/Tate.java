@@ -12,7 +12,7 @@ public abstract class Tate {
     protected int taxDay;
 
     public Tate() {
-        money = 0;
+        money = 970000;
         cars = new Car[1];
         taxDay = 1;
         cars[0] = new Car("bugatti1", 5, 100000);
@@ -23,9 +23,9 @@ public abstract class Tate {
     public void setMoney(double money) { this.money = money; }
 
     public void newCar(Room currentStore) { // neues Auto in Array
-        Car car = null;
-        if (currentStore.getName() == "Bugatti store") {
-            car = new Car("newBugatti",5, 100000);
+        Car car = null; //neues Car-Objekt
+        if (currentStore.getName() == "Bugatti store") { //wenn im richtigen Store
+            car = new Car("newBugatti",5, 100000); //neues Auto erstellt
         } else if (currentStore.getName() == "Lambo store") {
             car = new Car("newLambo",4,80000);
         } else if (currentStore.getName() == "Aston Martin store") {
@@ -71,7 +71,7 @@ public abstract class Tate {
     }
 
     public abstract void payDay();
-    public abstract void payTaxes();
+    //public abstract void payTaxes();
     public abstract void manageVariables();
     //abstrakte Methoden, die in den Unterklassen AndrewTate und TristanTate umgesetzt werden müssen
 }
