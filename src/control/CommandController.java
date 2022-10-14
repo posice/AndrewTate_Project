@@ -116,7 +116,7 @@ public class CommandController {
                     } else { outputCommand = "noG"; }
                 }
                 break;
-            case "buy bugatti":
+            case "buy_bugatti":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getBugattiStore()
                 ) //nur wenn in bugatti store
@@ -127,7 +127,7 @@ public class CommandController {
                     outputCommand = "bugattiBought";
                 }
                 break;
-            case "buy lambo":
+            case "buy_lambo":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getLamboStore()
                 )
@@ -136,7 +136,7 @@ public class CommandController {
                     outputCommand = "lamboBought";
                 }
                 break;
-            case "buy aston martin":
+            case "buy_aston_martin":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getAstonMartinStore()
                 )
@@ -145,7 +145,7 @@ public class CommandController {
                     outputCommand = "astonMartinBought";
                 }
                 break;
-            case "buy ferrari":
+            case "buy_ferrari":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getFerrariStore()
                 )
@@ -154,7 +154,7 @@ public class CommandController {
                     outputCommand = "ferrariBought";
                 }
                 break;
-            case "buy opel":
+            case "buy_opel":
                 if (
                     outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getOpelStore()
                 )
@@ -163,7 +163,7 @@ public class CommandController {
                     outputCommand = "opelBought";
                 }
                 break;
-            case "talk to g":
+            case "talk_to_g":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "G") {
                         outputController.getRoomController().getAndrewTate().setFollower(
@@ -177,7 +177,7 @@ public class CommandController {
                     } else { outputCommand = "noG"; }
                 }
                 break;
-            case "talk to chick":
+            case "talk_to_chick":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
                         outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
@@ -201,7 +201,7 @@ public class CommandController {
                     } else { outputCommand = "noChick"; }
                 }
                 break;
-            case "talk to nine five":
+            case "talk_to_ninefive":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "NineFive") {
                         outputController.getRoomController().getAndrewTate().setFollower(
@@ -215,7 +215,7 @@ public class CommandController {
                     } else { outputCommand = "noNineFive"; }
                 }
                 break;
-            case "talk to tristan":
+            case "talk_to_tristan":
                 int randomN = (int)(Math.random()*10);
                 if (outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getCurrentRoomTristan()) {
                     if (randomN < 4) {
