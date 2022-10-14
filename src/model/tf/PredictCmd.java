@@ -60,7 +60,6 @@ public class PredictCmd {
     public int predictAns(String cmd){
         INDArray input = Nd4j.create(stringToFloatArray(cmd));
         INDArray[] output = model.output(input);
-        System.out.println("Test " + output[0]);
 
         float[] out = new float[Integer.parseInt("" + output[0].length())];
 
