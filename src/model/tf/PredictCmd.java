@@ -68,11 +68,11 @@ public class PredictCmd {
             out[i] = output[0].getFloat(i) < 0.1 ? 0 : output[0].getFloat(i);
             maxIndex = out[i] > maxIndex ? i : maxIndex;
         }
-        return maxIndex;
+        return out[maxIndex] < 0.4 ? -1 : maxIndex;
     }
 
     public String getClassFromInt(int i){
-        return jsonObject.getJSONArray("classes").getString(i);
+        return i == -1 ? "none" : jsonObject.getJSONArray("classes").getString(i);
     }
 
     private float[][] stringToFloatArray(String cmd){

@@ -22,6 +22,9 @@ public class CommandController {
     public void controlCommand(String inp) throws IOException {
         String cmd = cm.getClassFromInt(cm.predictAns(inp));
         switch (cmd) { //cmd aus Textfield
+            case "none":
+                outputCommand = "";
+                break;
             case "gtgym": //wenn "gym" eingegeben wird
                 outputCommand = "goGym";
                 break;
