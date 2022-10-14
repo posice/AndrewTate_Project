@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class CommandController {
     String cmd;
+    PredictCmd cm = new PredictCmd();
     private String outputCommand;
     private OutputController outputController;
 
@@ -18,9 +19,10 @@ public class CommandController {
 
     public void newOutPutController(OutputController outputController) { this.outputController = outputController; }
 
-    public void controlCommand(String cmd) throws IOException {
+    public void controlCommand(String inp) throws IOException {
+        String cmd = cm.getClassFromInt(cm.predictAns(inp));
         switch (cmd) { //cmd aus Textfield
-            case "gym": //wenn "gym" eingegeben wird
+            case "gt gym": //wenn "gym" eingegeben wird
                 outputCommand = "goGym";
                 break;
             case "mansion":

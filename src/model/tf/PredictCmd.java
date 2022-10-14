@@ -16,6 +16,8 @@ import java.util.Random;
 public class PredictCmd {
     JSONObject jsonObject;
     JSONArray intents;
+    JSONArray wrds;
+    JSONArray classes;
     int numOfInputs;
     ComputationGraph model;
 
@@ -30,9 +32,17 @@ public class PredictCmd {
             System.out.println("Exception:" + e);
         }
 
+        try{
+            wrds = jsonObject.getJSONArray("words");
+            classes = jsonObject.getJSONArray("classes");
+        }catch (Exception e){
+            System.out.println("Exception: " + e);
+        }
+
         try {
             for(int i = 0; i < intents.length(); i++)
                 numOfInputs += intents.getJSONObject(i).getJSONArray("input").length();
+            numOfInputs = wrds.length();
         }catch (Exception e){
             System.out.println("Exception:" + e);
         }
@@ -62,22 +72,18 @@ public class PredictCmd {
         return maxIndex;
     }
 
-    public String getAnsFromInt(int i){
-        JSONArray outs = intents.getJSONObject(i).getJSONArray("responses");
-        int rnd = new Random().nextInt(outs.length());
-        return outs.getString(rnd);
+    public String getClassFromInt(int i){
+        return jsonObject.getJSONArray("classes").getString(i);
     }
 
     private float[][] stringToFloatArray(String cmd){
         float[][] f = new float[1][numOfInputs];
         int ti = 0;
-        for(int i = 0; i < intents.length(); i++){
-            JSONArray ja = intents.getJSONObject(i).getJSONArray("input");
-            for(int j = 0; j < ja.length(); j++){
-                f[0][ti] = cmd.contains(ja.getString(j)) ? 1 : 0;
-                ti++;
-            }
+        for(int i = 0; i < wrds.length(); i++){
+            f[0][ti] = cmd.contains(wrds.getString(i)) ? 1 : 0;
+            ti++;
         }
+        for(int i = 0; i < f[0].length; i++) System.out.print(" - " + f[0][i]);
         return f;
     }
 }
