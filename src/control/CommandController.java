@@ -22,40 +22,40 @@ public class CommandController {
     public void controlCommand(String inp) throws IOException {
         String cmd = cm.getClassFromInt(cm.predictAns(inp));
         switch (cmd) { //cmd aus Textfield
-            case "gt gym": //wenn "gym" eingegeben wird
+            case "gtgym": //wenn "gym" eingegeben wird
                 outputCommand = "goGym";
                 break;
-            case "mansion":
+            case "gtmansion":
                 outputCommand = "goMansion";
                 break;
-            case "french brothel":
+            case "gtfrenchbrothel":
                 outputCommand = "goFrenchBrothel";
                 break;
-            case "garage":
+            case "gtgarage":
                 outputCommand = "goGarage";
                 break;
-            case "bugatti store":
+            case "gtbugattistore":
                 outputCommand = "goBugattiStore";
                 break;
-            case "lambo store":
+            case "gtlambostore":
                 outputCommand = "goLamboStore";
                 break;
-            case "aston martin store":
+            case "gtastonmartinstore":
                 outputCommand = "goAstonMartinStore";
                 break;
-            case "ferrari store":
+            case "gtferraristore":
                 outputCommand = "goFerrariStore";
                 break;
-            case "opel store":
+            case "gtopelstore":
                 outputCommand = "goOpelStore";
                 break;
-            case "infos":
+            case "get_infos":
                 outputCommand = "getInfos";
                 break;
             case "commands":
                 outputCommand = "getCommands";
                 break;
-            case "have fun": //SEX
+            case "have_fun": //SEX
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
                         outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
@@ -73,7 +73,7 @@ public class CommandController {
                     } else { outputCommand = "noChick"; } // wenn chick nicht im room ändert sich cmd
                 }
                 break;
-            case "hit nine five": // nine five schlagen
+            case "hit_nine_five": // nine five schlagen
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "NineFive") { //wenn nine five im zimmer ist
                         outputCommand = "hitNineFive";
@@ -87,7 +87,7 @@ public class CommandController {
                     } else { outputCommand = "noNineFive"; }
                 }
                 break;
-            case "hit chick":
+            case "hit_chick":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "chick" ||
                         outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "Italian chick" ||
@@ -105,7 +105,7 @@ public class CommandController {
                     } else { outputCommand = "noChick"; }
                 }
                 break;
-            case "hit g":
+            case "hit_g":
                 for (int i=0; i < outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom().length; i++) {
                     if (outputController.getRoomController().getCurrentRoomAndrew().getPersonsInRoom()[i] == "G") {
                         outputCommand = "hitG";
