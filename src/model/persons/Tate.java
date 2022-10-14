@@ -12,7 +12,7 @@ public abstract class Tate {
     protected int taxDay;
 
     public Tate() {
-        money = 970000;
+        money = 0;
         cars = new Car[1];
         taxDay = 1;
         cars[0] = new Car("bugatti1", 5, 100000);

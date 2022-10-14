@@ -12,6 +12,10 @@ public class TristanTate extends Tate {
         manageVariables();
     }
 
+    public int getKids(){
+        return kids;
+    }
+
     @Override
     public void manageVariables() {
         Timer timer = new Timer();

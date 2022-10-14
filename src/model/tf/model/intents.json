@@ -2,63 +2,122 @@
   [
     {
       "tag" : "go_gym",
-      "input" : ["gym", "jim"],
+      "input" : ["gym", "jim", "go gym", "go to gym"],
       "responses": [ "GT gym" ]
     },
     {
       "tag" : "go_mansion",
-      "input" : ["mansion"],
+      "input" : ["mansion", "bring me home", "go home", "go to mansion", "home"],
       "responses": [ "GT mansion" ]
     },
     {
       "tag" : "go_frenchbrothel",
-      "input" : ["frenchbrothel"],
+      "input" : ["frenchbrothel", "go to disgusting place", "disgusting place", "where do nine fives have fun", "go to french brotehl", "french brothel"],
       "responses": [ "GT frenchbrothel" ]
     },
     {
       "tag" : "go_garage",
-      "input" : ["garage"],
+      "input" : ["garage", "go to garage", "go garage", "i want to see my beauties", "what colour has my bugatti"],
       "responses": [ "GT garage" ]
     },
     {
       "tag" : "go_bugattistore",
-      "input" : ["bugattistore"],
+      "input" : ["bugattistore", "bugatti store", "go to bugatti store", "i want to buy a beauty", "best cars"],
       "responses": [ "GT bugattistore" ]
     },
     {
       "tag" : "go_lambostore",
-      "input" : ["lambostore"],
+      "input" : ["lambostore", "lambo store", "pizza", "pizza cars", "decent cars", "go to lambo store"],
       "responses": [ "GT lambostore" ]
     },
     {
       "tag" : "go_astonmartinstore",
-      "input" : ["astonmartinstore"],
+      "input" : ["astonmartinstore", "aston martin store", "british cars", "go to aston martin store"],
       "responses": [ "GT astonmartinstore" ]
     },
     {
       "tag" : "go_ferraristore",
-      "input" : ["ferraristore"],
+      "input" : ["ferraristore", "ferrari store", "go to ferrari store", "other pizza"],
       "responses": [ "GT ferraristore" ]
     },
     {
       "tag" : "go_opelstore",
-      "input" : ["opelstore"],
+      "input" : ["opelstore", "opel store", "go to opel store", "where do i find garbage", "dump"],
       "responses": [ "GT opelstore" ]
     },
     {
       "tag" : "talk_chick",
-      "input" : ["chick", "hello chick"],
+      "input" : ["chick", "hello chick", "talk to chick", "make someone fall in love with you"],
       "responses": [ "talks to chick" ]
     },
     {
       "tag" : "talk ninefive",
-      "input" : ["ninefive"],
+      "input" : ["ninefive", "nine five", "talk to nine five", "teach"],
       "responses": [ "talks to ninefive" ]
     },
     {
-      "tag" : "talk topg",
-      "input" : ["topg"],
+      "tag" : "talk g",
+      "input" : ["g", "talk to g", "be admired", "get recognition"],
       "responses": [ "talks to topg" ]
+    },
+    {
+      "tag" : "talk tristan",
+      "input" : ["tristan", "talk to tristan", "exchange ideas", "brother"]
+    },
+    {
+      "tag" : "buy_bugatti",
+      "input" : ["buy bugatti", "buy_bugatti", "buy bugat", "purchase bugatti"],
+      "responses" : [ "buy bugatti" ]
+    },
+    {
+      "tag" : "buy_ferrari",
+      "input" : ["buy ferrari", "buy ferari", "buy_ferrari, purchase ferrari"],
+      "responses" : ["buy ferrari"]
+    },
+    {
+      "tag" : "buy_astonMartin",
+      "input" : ["buy aston martin", "purchase aston martin", "buy aston", "buy martin"],
+      "responses" : ["buy aston martin"]
+    },
+    {
+      "tag" : "buy_lambo",
+      "input" : ["buy lambo", "purchase lambo", "buy lamborghini"],
+      "responses" : ["buy lambo"]
+    },
+    {
+      "tag" : "buy_opel",
+      "input" : ["buy opel", "purchase opel", "buy garbage", "buy piece of shit"],
+      "responses" : ["buy opel"]
+    },
+    {
+      "tag" : "have_fun",
+      "input" : ["havefun", "have fun", "exercise", "do what you are destined to do", "once you go black you never go back"],
+      "responses" : ["have fun"]
+    },
+    {
+      "tag" : "hit ninefive",
+      "input" : ["hit ninefive", "hit nine five", "slap nine five"],
+      "responses" : ["hits ninefive"]
+    },
+    {
+      "tag" : "hit chick",
+      "input" : ["hit chick", "hitchick", "do the unspeakable", "slap chick"],
+      "responses" : ["hits chick"]
+    },
+    {
+      "tag" : "hit g",
+      "input" : ["hit g", "hitg", "slap g"],
+      "responses" : ["hit g"]
+    },
+    {
+      "tag" : "infos",
+      "input" : ["infos", "get infos", "how much money do I have", "show money", "show follower"],
+      "responses" : ["infos"]
+    },
+    {
+      "tag" : "commands",
+      "input" : ["commands", "what can i do", "all commands"],
+      "responses" : ["commands"]
     }
   ]
 }

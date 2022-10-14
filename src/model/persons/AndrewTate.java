@@ -34,7 +34,7 @@ public class AndrewTate extends Tate {
 
     @Override
     public void payDay() { //Umsetzen von abstrakter Methode
-        money += follower * 10; //Geld für Anzahl von Follower
+        money += follower; //Geld für Anzahl von Follower
         money += (int)(Math.random()*1000); // damit das Spiel nicht zu lange dauert
         money += addUpCarMoney(); // Geld für Autos
     }

@@ -188,7 +188,7 @@ public class OutputController {
         String infos = "Andrew Tate: follower: " + roomController.getAndrewTate().getFollower() + " money: " +
                 (int)(roomController.getAndrewTate().getMoney()) + " current location: " + roomController.getCurrentRoomAndrew().getName() +
                 "\n" + " Tristan Tate: money: " + (int)(roomController.getTristanTate().getMoney()) + " location: " +
-                roomController.getCurrentRoomTristan().getName();
+                roomController.getCurrentRoomTristan().getName() + " kids: " + roomController.getTristanTate().getKids();
         return infos; // der neu zusammengesetzte String wird zurückgegeben
     }
 }
