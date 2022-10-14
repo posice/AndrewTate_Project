@@ -84,7 +84,7 @@ public class CommandController {
                                 outputController.getRoomController().getAndrewTate().getFollower() + 1000
                         ); //neue follower
                         outputController.getRoomController().getAndrewTate().setMoney(
-                                outputController.getRoomController().getAndrewTate().getMoney() - 10000
+                                outputController.getRoomController().getAndrewTate().getMoney() - 15000
                         ); //weniger geld
                         break;
                     } else { outputCommand = "noNineFive"; }

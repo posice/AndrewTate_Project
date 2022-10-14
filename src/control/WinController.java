@@ -22,7 +22,7 @@ public class WinController {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                if (andrewTate.getFollower() >= 1000 && andrewTate.getMoney()>= 1000000){
+                if (andrewTate.getFollower() >= 10000 && andrewTate.getMoney()>= 1000000){
                     frame.win();
                 }
             }
