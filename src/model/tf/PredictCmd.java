@@ -82,7 +82,6 @@ public class PredictCmd {
             f[0][ti] = cmd.contains(wrds.getString(i)) ? 1 : 0;
             ti++;
         }
-        for(int i = 0; i < f[0].length; i++) System.out.print(" - " + f[0][i]);
         return f;
     }
 }
