@@ -22,10 +22,16 @@ public abstract class Tate {
 
     public void setMoney(double money) { this.money = money; }
 
-    public void newCar(Room currentStore) { // neues Auto in Array
-        Car car = null; //neues Car-Objekt
-        if (currentStore.getName() == "Bugatti store") { //wenn im richtigen Store
-            car = new Car("newBugatti",5, 100000); //neues Auto erstellt
+    /**
+     * neues Auto wird erstellt, dann ein neues auto array, welches alle alten und das neue Auto enthält
+     * dabei wird das neue Auto an die letzte Stelle des neuen arrays gepackt
+     * von Andrews Geld wird der Preis abgezogen
+     * @param currentStore prüft ob Auto überhaupt gekauft werden kann
+     */
+    public void newCar(Room currentStore) {
+        Car car = null;
+        if (currentStore.getName() == "Bugatti store") {
+            car = new Car("newBugatti",5, 100000);
         } else if (currentStore.getName() == "Lambo store") {
             car = new Car("newLambo",4,80000);
         } else if (currentStore.getName() == "Aston Martin store") {
@@ -35,43 +41,46 @@ public abstract class Tate {
         } else if (currentStore.getName() == "Opel store") {
             car = new Car("shit",0,10000);
         }
-        Car[] newCars = new Car[cars.length + 1]; //neues Array mit einem Platz mehr
+        Car[] newCars = new Car[cars.length + 1];
         for (int i = 0; i < cars.length; i++) {
-            newCars[i] = cars[i]; // Car Objekte von altem Array ins neue Array einfügen
+            newCars[i] = cars[i];
         }
-        newCars[newCars.length - 1] = car; // an letzte Stelle wird das von uns gekaufte Auto eingefügt
-        cars = newCars; // Referenzbezeichner zeigt auf neues Array
-        money -= car.getPrice(); //Preis von Auto wird von Geld abgezogen
+        newCars[newCars.length - 1] = car;
+        cars = newCars;
+        money -= car.getPrice();
     }
 
-    /*public void sellCar(String name) { //Auto verkaufen -> ein Car Objekt weniger im Array
-        for (int i = 0; i < cars.length; i++) { //prüft alle Objekte im Array, ob es das Auto ist, was verkauft werden soll
-            if (Objects.equals(cars[i].getName(), name)) { //außerdem kann der erste Wagen (Bugatti) nicht verkauft werden
-                cars[i] = null; // Auto wird aus Array entfernt
-                Car[] newCars = new Car[cars.length - 1]; // neues Array mit einem Platz weniger
-                for (int j = 0; j < newCars.length; i++) {
-                    if (!(cars[i] == null)) { // sucht dien null Referenz
-                        newCars[i] = cars[i]; // Car Obejekte aus altem Array werden in das neue array eingesetzt
-                    }
-                }
-                cars = newCars; //Referenzbezeichner zeigt auf neues Array
-                break;
-            }  // wenn Bedingungen nicht erfüllt stoppt Methode
-        }
-    } */
 
-    public int addUpCarMoney() { //man bekommt Geld dafür, dass man coole Autos besitzt
+    /**
+     * Andrew bekommt Geld, weil die Autos die er hat cool sind
+     * Dabei wird beachtet wie viele Autos Andrew hat und wie cool die einzelnen Autos sind
+     * @return das Ergebnis der Rechnung
+     */
+    public int addUpCarMoney() {
         int output = 0;
         for (int i = 0; i < cars.length; i++) {
-            if (cars[i] != null) output += cars[i].getCoolness(); //Coolness der einzelnen Cars wird aufaddiert
+            if (cars[i] != null) output += cars[i].getCoolness();
         }
-        output += cars.length*10; // außerdem kriegt man Geld für wie viele Autos man besitzt
-        output *= 100; // damit das Spiel nicht zu lange dauert
-        return output; // Rückgabe des Ergebnisses
+        output += cars.length*10;
+        output *= 100;
+        return output;
     }
 
+    /**abstrakte Methoden, die in den Unterklassen AndrewTate und TristanTate umgesetzt werden müssen */
+
+    /**
+     * Die Tate-Brüder haben verschiedene payDays, dabei werden Kinder, Follower etc. beachtet, hier wird dies festgelegt
+     */
     public abstract void payDay();
-    //public abstract void payTaxes();
+
+    /**
+     * Zahlen von Steuern, wegen Kindern fällt dies anders aus
+     */
+    public abstract void payTaxes();
+
+    /**
+     * für jeden Tate werden die Variablen anders gemanaged, hier wird dies festgelegt
+     */
     public abstract void manageVariables();
-    //abstrakte Methoden, die in den Unterklassen AndrewTate und TristanTate umgesetzt werden müssen
+
 }

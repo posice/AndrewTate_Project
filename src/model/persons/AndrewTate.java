@@ -5,15 +5,26 @@ import java.util.TimerTask;
 
 public class AndrewTate extends Tate {
 
+    /**
+     * Andrew Tate, der Hauptcharakter hat eine eigene Klasse
+     * Hier wird alles vorbereitet, damit dieser später in den Controller Klassen gesteuert werden kann
+     */
+
     private int follower;
 
     public AndrewTate() {
-        follower = 1000;
+        follower = 0;
         manageVariables();
     }
 
     public double getMoney(){ return money; }
     public int getFollower() { return follower;}
+
+
+    /**
+     * alle Autos werden in ein String gepackt, mit Leerzeichen getrennt
+     * @return String mit allen Autos
+     */
 
     public String getAllCars() {
         String output = "";
@@ -32,31 +43,56 @@ public class AndrewTate extends Tate {
         follower += randomN;
     }
 
-    @Override
-    public void payDay() { //Umsetzen von abstrakter Methode
-        money += follower; //Geld für Anzahl von Follower
-        money += (int)(Math.random()*1000); // damit das Spiel nicht zu lange dauert
-        money += addUpCarMoney(); // Geld für Autos
+    /**
+     * Andrew bekommt Geld, weil die Autos die er hat cool sind
+     * Dabei wird beachtet wie viele Autos Andrew hat und wie cool die einzelnen Autos sind
+     * @return das Ergebnis der Rechnung
+     */
+    public int addUpCarMoney() {
+        int output = 0;
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i] != null) output += cars[i].getCoolness();
+        }
+        output += cars.length*10;
+        output *= 100;
+        return output;
     }
 
-    /*@Override
+    /**
+     * Geld wird angepasst, abstrakte Methode wird umgesetzt
+     */
+    @Override
+    public void payDay() {
+        money += follower;
+        money += (int)(Math.random()*1000);
+        money += addUpCarMoney();
+    }
+
+    /**
+     * Geld wird durch Steuern angepasst, abstrakte Methode wird umgesetzt
+     */
+    @Override
     public void payTaxes() {
         if (money > 0) money*= 0.9;
-    } // Geld wird von dem Staat abgezogen */
+    }
 
+    /**
+     * timer für alle 5 Sekunden wird eingesetzt -> nimmt Änderungen an follower und money vor
+     */
     @Override
     public void manageVariables() {
+
         Timer timer = new Timer();
 
         TimerTask timerTask = new TimerTask() {
             @Override
-            public void run() { //Timer für alle 5 Sekunden
-                if (taxDay == 4){ //jeden viertan Tag werden Steuern gezahlt
-                    taxDay = 1;  //zurücksetzen auf ersten Tag
-                    //payTaxes();  // Steuern werden bezahlt
-                } else { taxDay ++; } // wenn nicht taxday, dann kommt nächster Tag
-                payDay(); // Tate bekommt sein Geld
-                generateFollower(); // Followerzahl wird vergrößert
+            public void run() {
+                if (taxDay == 4){
+                    taxDay = 1;
+                    payTaxes();
+                } else { taxDay ++; }
+                payDay();
+                generateFollower();
             }
         };// Quelle für den Timer: https://www.youtube.com/watch?v=QEF62Fm81h4
 

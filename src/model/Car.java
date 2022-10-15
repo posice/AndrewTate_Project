@@ -2,6 +2,10 @@ package model;
 
 public class Car {
 
+    /**
+     *  Containerklasse: speichert nur wichtige Daten über Auto
+     */
+
     private final String name;
     private final int coolness;
     private final int price;
@@ -17,4 +21,3 @@ public class Car {
     public int getPrice() { return price; }
 }
 
-//Containerklasse: speichert nur wichtige Daten über Auto
