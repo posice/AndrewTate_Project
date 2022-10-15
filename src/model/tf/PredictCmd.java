@@ -29,7 +29,7 @@ public class PredictCmd {
 
     /**
      * Konstruktor (construct):
-     * Lädt: die JSON, Model.h5 (KI)
+     * Lädt: die JSON & model.h5 (KI)
      * Bei Error: Ausgabe in der Konsole, KEIN ABSTURZ, funktioniert dann trotzdem nicht
      */
     public PredictCmd(){
