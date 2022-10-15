@@ -7,6 +7,11 @@ import model.persons.*;
 import java.io.IOException;
 
 public class CommandController {
+
+    /**
+     * Klasse zum Empfangen der Commands der User
+     */
+
     String cmd;
     PredictCmd cm = new PredictCmd();
     private String outputCommand;
@@ -17,15 +22,23 @@ public class CommandController {
         outputCommand = "";
     }
 
-    public void newOutPutController(OutputController outputController) { this.outputController = outputController; }
+    public void newOutputController(OutputController outputController) { this.outputController = outputController; }
 
+    /**
+     * Methode zum Verwalten der Commands
+     * für jedes case wird outputCommnand für den outputController vorbereitet
+     * bei Interaktionen mit Personen und Kaufen von Autos wird das Model angepasst
+     * outputController.controlOutput wird danach aufgerufen
+     * @param inp wird von predictCmd analysiert
+     * @throws IOException
+     */
     public void controlCommand(String inp) throws IOException {
         String cmd = cm.getClassFromInt(cm.predictAns(inp));
         switch (cmd) { //cmd aus Textfield
             case "none":
                 outputCommand = "";
                 break;
-            case "gtgym": //wenn "gym" eingegeben wird
+            case "gtgym":
                 outputCommand = "goGym";
                 break;
             case "gtmansion":
@@ -243,54 +256,8 @@ public class CommandController {
                     );
 
                 } else { outputCommand = "noTristan"; }
-
-            /* case "sell bugatti":
-                if (
-                    outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getBugattiStore()
-                )
-                {
-                    outputController.getRoomController().getAndrewTate().sellCar("newBugatti");
-                    outputCommand = "bugattiSold";
-                } else { outputCommand = "wrongStore"; }
-                break;
-            case "sell lambo":
-                if (
-                        outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getLamboStore()
-                )
-                {
-                    outputController.getRoomController().getAndrewTate().sellCar("newLambo");
-                    outputCommand = "lamboSold";
-                } else { outputCommand = "wrongStore"; }
-                break;
-            case "sell aston martin":
-                if (
-                        outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getAstonMartinStore()
-                )
-                {
-                    outputController.getRoomController().getAndrewTate().sellCar("newAstonMartin");
-                    outputCommand = "astonMartinSold";
-                } else { outputCommand = "wrongStore"; }
-                break;
-            case "sell ferrari":
-                if (
-                        outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getFerrariStore()
-                )
-                {
-                    outputController.getRoomController().getAndrewTate().sellCar("newFerrari");
-                    outputCommand = "ferrariSold";
-                } else { outputCommand = "wrongStore"; }
-                break;
-            case "sell opel":
-                if (
-                        outputController.getRoomController().getCurrentRoomAndrew() == outputController.getRoomController().getOpelStore()
-                )
-                {
-                    outputController.getRoomController().getAndrewTate().sellCar("shit");
-                    outputCommand = "opelSold";
-                } else { outputCommand = "wrongStore"; }
-                break; */
         }
-        outputController.controlOutput(outputCommand); //outputController wird aufgerufen
+        outputController.controlOutput(outputCommand);
         outputCommand = ""; //outputCommand ist null, sodass man nicht einfach irgendwas eingeben kann
     }
 }

@@ -4,6 +4,11 @@ import model.persons.*;
 
 public class RoomController {
 
+    /**
+     * Klasse zur Kontrolle der Ort
+     * einzelne Orte werden erstellt
+     */
+
     private Room mansion;
     private Room frenchBrothel;
     private Room gym;
@@ -18,11 +23,15 @@ public class RoomController {
     private AndrewTate andrewTate; //lose Kopplung durch getter -> OuputController muss AndrewTate und TristanTate nicht kennen
     private TristanTate tristanTate;
 
+    /**
+     * alle Rooms werden erstellt und alle Informationen werden hinzugefügt
+     * @param andrewTate
+     * @param tristanTate
+     */
     public RoomController(AndrewTate andrewTate, TristanTate tristanTate) {
         this.andrewTate = andrewTate;
         this.tristanTate = tristanTate;
 
-        // In den folgenden Zeilen werden alle verschiedenen Rooms erstellt
         mansion = new Room(
                 "mansion",
                 "You are now in the mansion, there is a chick waiting for you",
@@ -95,9 +104,14 @@ public class RoomController {
 
     public void setCurrentRoomAndrew(Room newRoom) { currentRoomAndrew = newRoom; }
 
-    public void setRandomRoom(Tate tate) { //Subtyping Methode, ein random Room wird für einen beliebigen Tate gesetzt
-        int randomN = (int)(Math.random()*100); //random Zahl von 0 bis 99
-        if (randomN < 40) { //wemm kleiner als 40
+    /**
+     * ein Tate wird in ein random Zimmer gesetzt
+     * durch Math.random() und if-Verzweigung wird entschieden was der neue room ist, dann wird Model angepasst
+     * @param tate beliebiger Tate, subtyping
+     */
+    public void setRandomRoom(Tate tate) {
+        int randomN = (int)(Math.random()*100);
+        if (randomN < 40) { //wenn kleiner als 40
             if (tate == tristanTate) { // wenn Parameter tristanTate ist
                 currentRoomTristan.setTristanOutRoom(); // Tristan wird aus seinem aktuellen Zimmer entfernt
                 mansion.setTristanInRoom(); //wird in Mansion gesetzt
