@@ -23,8 +23,8 @@ public class Frame extends JFrame implements ActionListener {
 
     /**
      * man erstellt das Frame
-     * Dazu einen Button
-     * Dazu alle Grundprinuzipien
+     * Dazu einen Button und das Textfield, die dem Fenster hinzugefügt werden
+     * Dazu alle Grundprinuzipien wie das Aussehen, ein Schließ-mechanismus etc.
      * null Layout für spezifische x,y,z Koordinaten
      * @param commandController wird vom Maincontroller gegeben
      */
@@ -33,7 +33,7 @@ public class Frame extends JFrame implements ActionListener {
         button = new Button();
         button.addActionListener(this);
         yPosOfPanel = 1;
-        this.setSize(1080,600);
+        this.setSize(1250,600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setLayout(null);
@@ -60,6 +60,7 @@ public class Frame extends JFrame implements ActionListener {
     /**
      * falls der Bildschirm voll ist, wird er gecleart
      * Man erstellt ein Panel mit Label im Frame, direkt unter dem vorigen
+     * Das Panel wird hinzugefügt und es wird dafür gesorgt, dass das nächste weiter unten auftaucht
      * @param output steht für den gegeben Output bei Aufruf der Methode
      */
 

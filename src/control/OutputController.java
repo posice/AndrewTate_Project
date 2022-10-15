@@ -27,6 +27,7 @@ public class OutputController {
         this.frame = frame;
     }
 
+
     public RoomController getRoomController() { return roomController; } // für die lose Kopplung
 
     /**
@@ -117,10 +118,11 @@ public class OutputController {
                 break;
             case "getCommands":
                 String output = "";
-                for (int i=0; i < allCommands.length; i++) {
+                /*for (int i=0; i < allCommands.length; i++) {
                     if (i == allCommands.length - 1) { output += allCommands[i]; }
                     else { output += allCommands[i] + ", "; }
-                }
+                }*/
+                output = "You can go to different car stores and buy the cars. You can also go to different places regarding Andrew Tate. There are also some other things to do like talking or smashing";
                 frame.printOutput(output);
                 break;
             case "noNineFive":

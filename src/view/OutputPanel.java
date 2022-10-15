@@ -11,7 +11,7 @@ public class OutputPanel extends JPanel {
      * @param y für die Koordinaten
      */
     public OutputPanel(OutputLabel outputLabel, int x, int y){
-        this.setBounds(x, y, 1000, 40);
+        this.setBounds(x, y, 1150, 40);
         this.setBackground(new Color(34, 37, 41));
         this.add(outputLabel);
     }

@@ -13,7 +13,7 @@ public class CommandTextfield extends JTextField {
 
     /**
      * Das Textfeld zum eigeben der Befehle
-     * Das Aussehen wird hier festgelegt
+     * Das Aussehen wird hier festgelegt: Wo der Text ist, die Farben und die Umrandung, sowie die Koordinaten und Größe
      */
     public CommandTextfield(){
         Border border = BorderFactory.createLineBorder(Color.white);
