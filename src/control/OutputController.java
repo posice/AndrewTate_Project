@@ -6,9 +6,17 @@ import java.io.IOException;
 
 public class OutputController {
 
+    /**
+     * Controler Klasse, welche kontrolliert, welche Antworten auf welche Comments des Users folgen
+     * kennt roomController um auf einzelne Daten der Orte zuzugreifen
+     * kennt frame, um Verbindung zur GUI aufzustellen
+     */
+
     private RoomController roomController;
     private Frame frame;
-    private String[] allCommands = {"gym", "mansion", "french brothel", "garage", "bugatti store", "lambo store",
+    private String[] allCommands =
+    {
+            "gym", "mansion", "french brothel", "garage", "bugatti store", "lambo store",
             "aston martin store", "ferrari store", "opel store", "infos", "commands", "have fun", "hit nine five",
             "hit chick", "hit g", "buy bugatti", "buy lambo", "buy aston martin", "buy ferrari", "buy opel", "talk to chick",
             "talk to g", "talk to nine five", "talk to tristan"
@@ -19,18 +27,33 @@ public class OutputController {
         this.frame = frame;
     }
 
-    public RoomController getRoomController() { return roomController; } // für die losee Kopplung
+    public RoomController getRoomController() { return roomController; } // für die lose Kopplung
 
-    public void controlOutput(String outputCommand) throws IOException { //kontrolliert den Output
-        switch (outputCommand) { //bekommt im CommandController ein Command
-            case "": //Wenn command leer ist
-                frame.printOutput("Excuse me what the hell did you just say?"); //spieler weiß, dass er
-                break; //etwas anderes eintippen muss
-            case "goGym": //command "goGyM"
-                frame.printOutput(roomController.getGym().getInfo()); //Info zum Gym im Frame
-                roomController.setCurrentRoomAndrew(roomController.getGym()); //Andrews Pos wird geändert
-                if (roomController.getCurrentRoomTristan() == roomController.getGym()) { //wenn Tristan im Gym ist
-                    frame.printOutput("\n Your brother Tristan is in here as well"); //Spieler wird benachrichtigt
+    /**
+     * Methode zur Kontrolle von Output
+     * Bei leerem String: User wird benachrichtigt, dass Programm nicht versteht, was er meint
+     * Bei Orten: User wird informiert, dass er in einem neuen Ort ist und was dieser Ort bietet,
+     * im Hintergrund wird das Model angepasst
+     * Bei Personen: User wird benachrichtigt, welche Interaktionen mit Personen gerade stattfinden
+     * Dabei wird beachtet, ob die Person im Zimmer ist, falls nicht, wird der User benachrichtigt
+     * Bei Autos: User wird benachrichtigt, dass er ein Auto gekauft hat
+     * Bei getInfos: siehe Methode getInfos()
+     * Bei getCommands: es werden dem User mögliche Commands gezeigt
+     *
+     * @param outputCommand bekommt String, welcher aus dem commandController kommt,
+     * damit dann entscheiden kann was weitergemacht wird
+     * @throws IOException
+     */
+    public void controlOutput(String outputCommand) throws IOException {
+        switch (outputCommand) {
+            case "":
+                frame.printOutput("Excuse me what the hell did you just say?");
+                break;
+            case "goGym":
+                frame.printOutput(roomController.getGym().getInfo());
+                roomController.setCurrentRoomAndrew(roomController.getGym());
+                if (roomController.getCurrentRoomTristan() == roomController.getGym()) {
+                    frame.printOutput("\n Your brother Tristan is in here as well");
                 }
                 break;
             case "goMansion":
@@ -90,17 +113,17 @@ public class OutputController {
                 }
                 break;
             case "getInfos":
-                frame.printOutput(getInfos()); //alle Infos werden zurückgegeben
+                frame.printOutput(getInfos());
                 break;
-            case "getCommands": // alle möglichen Commands werden angegegben
-                String output = ""; //neue String variable
-                for (int i=0; i < allCommands.length; i++) { //arrray allCommands durchlaufen
-                    if (i == allCommands.length - 1) { output += allCommands[i]; }  //an letzter Stelle wird letzter command eingefügt
-                    else { output += allCommands[i] + ", "; } // alle Commands werden durch ein Komma getrennt
+            case "getCommands":
+                String output = "";
+                for (int i=0; i < allCommands.length; i++) {
+                    if (i == allCommands.length - 1) { output += allCommands[i]; }
+                    else { output += allCommands[i] + ", "; }
                 }
                 frame.printOutput(output);
                 break;
-            case "noNineFive": //wenn im Room kein Nine Five ist
+            case "noNineFive":
                 frame.printOutput("no Nine Fives in here :(");
                 break;
             case "noChick":
@@ -163,32 +186,19 @@ public class OutputController {
             case "noTristan":
                 frame.printOutput("Tristan is not in this room");
                 break;
-            /*case "bugattiSold":
-                frame.printOutput("well, you just sold a bugatti, insert heart breaking sound");
-                break;
-            case "lamboSold":
-                frame.printOutput("well, you just sold a lambo, insert heart breaking sound");
-                break;
-            case "astonMartinSold":
-                frame.printOutput("well, you just sold an Aston Martin, insert heart breaking sound");
-                break;
-            case "ferrariSold":
-                frame.printOutput("well, you just sold a ferrari, insert heart breaking sound");
-                break;
-            case "opelSold":
-                frame.printOutput("oh finally you sold that piece of garbage");
-                break;
-             */
-
         }
     }
 
-    public String getInfos() { // Ausgabe von allen wichtigen Informationen durch typecast
-        // alle wichtigen Informationen werden konkatiniert
+    /**
+     * erstellt String, in welchem alle benötigten Informationen für den User zusammengefasst werden
+     *
+     * @return der zusammengesetzte String
+     */
+    public String getInfos() {
         String infos = "Andrew Tate: follower: " + roomController.getAndrewTate().getFollower() + " money: " +
                 (int)(roomController.getAndrewTate().getMoney()) + " current location: " + roomController.getCurrentRoomAndrew().getName() +
                 "\n" + " Tristan Tate: money: " + (int)(roomController.getTristanTate().getMoney()) + " location: " +
                 roomController.getCurrentRoomTristan().getName() + " kids: " + roomController.getTristanTate().getKids();
-        return infos; // der neu zusammengesetzte String wird zurückgegeben
+        return infos;
     }
 }
